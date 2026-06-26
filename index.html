@@ -237,7 +237,7 @@
     section { padding: 48px 0; }
   }
 
-  /* ===== CARD 1 FIX: SLIDESHOW — images only, no video overlap ===== */
+  /* ===== CARD 1 FIX: SLIDESHOW (images only) ===== */
   .slide-wrap{position:relative;height:210px;overflow:hidden;background:#0a0e16;cursor:pointer}
   .slide-wrap img.slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s ease;pointer-events:none}
   .slide-wrap img.slide.active{opacity:1}
@@ -248,8 +248,7 @@
   .slide-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .18s,transform .18s}
   .slide-dot.active{background:var(--amber);transform:scale(1.3)}
   .slide-hint{position:absolute;top:8px;right:8px;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.12);color:var(--muted);font-family:"JetBrains Mono";font-size:10px;padding:3px 8px;border-radius:6px;z-index:5;pointer-events:none}
-
-  /* ===== CARD 1 FIX: VIDEO STRIP — fully separate block BELOW slideshow ===== */
+  /* ===== CARD 1 FIX: VIDEO STRIP (separate, below slideshow) ===== */
   .card-video-strip{display:flex;align-items:center;gap:10px;padding:10px 14px;background:linear-gradient(90deg,rgba(242,200,17,.10),rgba(242,200,17,.03));border-top:1px solid rgba(242,200,17,.20);border-bottom:1px solid var(--line);cursor:pointer;transition:background .18s}
   .card-video-strip:hover{background:linear-gradient(90deg,rgba(242,200,17,.18),rgba(242,200,17,.08))}
   .vid-play-btn{width:34px;height:34px;flex:none;background:var(--amber);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#15110a;font-size:12px;box-shadow:0 0 14px rgba(242,200,17,.45);transition:transform .18s,box-shadow .18s}
@@ -258,7 +257,6 @@
   .vid-sublabel{font-family:"JetBrains Mono";font-size:10px;color:var(--faint);margin-top:2px}
   .vid-arrow{margin-left:auto;color:var(--faint);font-size:14px;transition:transform .18s}
   .card-video-strip:hover .vid-arrow{transform:translateX(4px)}
-
   /* FULLSCREEN IMAGE VIEWER */
   .fs-overlay{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.93);align-items:center;justify-content:center}
   .fs-overlay.open{display:flex;animation:fdIn .2s ease}
@@ -271,7 +269,6 @@
   .fs-nav:hover{background:rgba(242,200,17,.4)}
   .fs-nav.prev{left:18px}.fs-nav.next{right:18px}
   .fs-counter{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);font-family:"JetBrains Mono";font-size:12px;color:rgba(255,255,255,.5);background:rgba(0,0,0,.4);padding:4px 12px;border-radius:99px}
-
   /* VIDEO MODAL */
   .video-modal{display:none;position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,.96);align-items:center;justify-content:center}
   .video-modal.open{display:flex;animation:fdIn .2s ease}
@@ -280,6 +277,7 @@
   .vm-close{position:absolute;top:-14px;right:-14px;background:var(--surface-2);border:1px solid var(--line);color:var(--text);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;z-index:10;transition:background .18s,border-color .18s}
   .vm-close:hover{background:var(--amber);color:#15110a;border-color:var(--amber)}
   .vm-label{font-family:"JetBrains Mono";font-size:11px;color:var(--faint);text-align:center;margin-top:12px;letter-spacing:1px}
+
 </style>
 </head>
 <body>
@@ -430,19 +428,13 @@
 
       <div class="proj-grid" style="margin-top:32px;">
 
-        <!-- ============================================================
-             CARD 1: Bird Finance Dashboard
-             Layout — 3 stacked zones, ZERO overlap:
-               [1] .slide-wrap        => image slideshow (click = fullscreen)
-               [2] .card-video-strip  => video button (click = video modal)
-               [3] .card-body         => title, description, tags
-             ============================================================ -->
+                <!-- Card 1: Bird Finance Dashboard - FIXED (no overlap) -->
         <article class="card reveal">
-          <!-- [1] IMAGE SLIDESHOW — images only, no video here -->
+          <!-- Slideshow: images only, click = fullscreen -->
           <div class="slide-wrap" id="finSlideWrap" title="Click image to expand">
-            <img class="slide active" id="finSlide0" alt="Finance Dashboard Screenshot 1" />
-            <img class="slide" id="finSlide1" alt="Finance Dashboard Screenshot 2" />
-            <img class="slide" id="finSlide2" alt="Finance Dashboard Screenshot 3" />
+            <img class="slide active" id="finSlide0" src="finSlide0.png" alt="Finance Dashboard Screenshot 1" />
+            <img class="slide" id="finSlide1" src="finSlide1.png" alt="Finance Dashboard Screenshot 2" />
+            <img class="slide" id="finSlide2" src="finSlide2.png" alt="Finance Dashboard Screenshot 3" />
             <button class="slide-arrow prev" id="finPrev" aria-label="Previous slide">&#8249;</button>
             <button class="slide-arrow next" id="finNext" aria-label="Next slide">&#8250;</button>
             <div class="slide-dots" id="finDots">
@@ -452,8 +444,7 @@
             </div>
             <div class="slide-hint">&#128269; Click to expand</div>
           </div>
-
-          <!-- [2] VIDEO STRIP — completely separate block below the slideshow -->
+          <!-- Video strip: SEPARATE element below slideshow, no overlap -->
           <div class="card-video-strip" id="finVideoBtn" role="button" tabindex="0" aria-label="Watch Finance Dashboard demo video">
             <div class="vid-play-btn">&#9654;</div>
             <div>
@@ -462,8 +453,7 @@
             </div>
             <div class="vid-arrow">&#8594;</div>
           </div>
-
-          <!-- [3] CARD BODY -->
+          <!-- Card body -->
           <div class="card-body">
             <h3>Bird Finance Dashboard</h3>
             <p>A comprehensive financial analytics dashboard covering P&amp;L, revenue trends, and expense breakdowns &mdash; built with Advanced DAX and a clean Star Schema model.</p>
@@ -474,7 +464,7 @@
           </div>
         </article>
 
-        <!-- Card 2: star schema -->
+                <!-- Card 2: donut (star schema) -->
         <article class="card reveal">
           <div class="card-viz">
             <div class="viz-head"><span>Data Model</span><span>Star Schema</span></div>
@@ -501,7 +491,7 @@
           </div>
         </article>
 
-        <!-- Card 3: trend line -->
+        <!-- Card 3: line (trend / DAX) -->
         <article class="card reveal">
           <div class="card-viz">
             <div class="viz-head"><span>Trend Analysis</span><span>DAX</span></div>
@@ -680,7 +670,7 @@
   <div class="video-modal" id="videoModal" role="dialog" aria-modal="true">
     <div class="video-inner">
       <button class="vm-close" id="vmClose">&#10005;</button>
-      <video id="finVideo" controls preload="metadata">
+      <video id="finVideo" controls preload="metadata" poster="finPoster.png">
         <source src="Finance_LN.mp4" type="video/mp4" />
         Your browser does not support HTML5 video.
       </video>
@@ -689,31 +679,8 @@
   </div>
 
   <script>
-  // ---- PLACEHOLDER SLIDES (replace .src with your real screenshot paths) ----
-  (function(){
-    function mkSrc(label,c1,c2){
-      var cv=document.createElement('canvas');cv.width=800;cv.height=450;
-      var ctx=cv.getContext('2d'),g=ctx.createLinearGradient(0,0,800,450);
-      g.addColorStop(0,c1);g.addColorStop(1,c2);ctx.fillStyle=g;ctx.fillRect(0,0,800,450);
-      ctx.strokeStyle='rgba(255,255,255,.05)';ctx.lineWidth=1;
-      for(var x=0;x<=800;x+=40){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,450);ctx.stroke();}
-      for(var y=0;y<=450;y+=40){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(800,y);ctx.stroke();}
-      ctx.fillStyle='rgba(255,255,255,.5)';ctx.font='bold 18px monospace';ctx.textAlign='center';
-      ctx.fillText(label,400,215);
-      ctx.fillStyle='rgba(255,255,255,.3)';ctx.font='12px monospace';
-      ctx.fillText('Replace with real screenshot',400,243);
-      return cv.toDataURL();
-    }
-    // TO USE REAL IMAGES instead of placeholders, replace these 3 lines:
-    //   document.getElementById('finSlide0').src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABwUA…zjIIAAAAAAAAAAABAnPsZsmdqsuZ1uvgAAAAASUVORK5CYII=';
-    //   document.getElementById('finSlide1').src = 'screenshots/dash2.png';
-    //   document.getElementById('finSlide2').src = 'screenshots/dash3.png';
-    document.getElementById('finSlide0').src=mkSrc('Finance Dashboard Overview','#0d2035','#0a1628');
-    document.getElementById('finSlide1').src=mkSrc('Finance Dashboard P+L','#0d2835','#0a1a28');
-    document.getElementById('finSlide2').src=mkSrc('Finance Dashboard Trends','#1a1035','#0e0a28');
-  })();
-
-  // ---- SLIDESHOW ----
+  
+  // Slideshow logic
   (function(){
     var sl=Array.from(document.querySelectorAll('#finSlideWrap .slide'));
     var dt=Array.from(document.querySelectorAll('#finDots .slide-dot'));
@@ -727,8 +694,7 @@
     sa();
     window._fC=function(){return c;};window._fS=sl;
   })();
-
-  // ---- FULLSCREEN VIEWER ----
+  // Fullscreen viewer
   (function(){
     var ov=document.getElementById('fsOverlay'),img=document.getElementById('fsImg'),ctr=document.getElementById('fsCounter'),fc=0;
     function op(i){fc=i;img.src=window._fS[fc].src;ctr.textContent=(fc+1)+' / '+window._fS.length;ov.classList.add('open');document.body.style.overflow='hidden';}
@@ -741,8 +707,7 @@
     ov.addEventListener('click',function(e){if(e.target===ov)cl();});
     document.addEventListener('keydown',function(e){if(!ov.classList.contains('open'))return;if(e.key==='ArrowLeft')nv(-1);if(e.key==='ArrowRight')nv(1);if(e.key==='Escape')cl();});
   })();
-
-  // ---- VIDEO MODAL ----
+  // Video modal
   (function(){
     var m=document.getElementById('videoModal'),v=document.getElementById('finVideo');
     function op(){m.classList.add('open');document.body.style.overflow='hidden';}
