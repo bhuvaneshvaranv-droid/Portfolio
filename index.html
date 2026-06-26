@@ -464,33 +464,48 @@
           </div>
         </article>
 
-                <!-- Card 2: donut (star schema) -->
+                <!-- Card 2: Maruti Suzuki Sales Dashboard -->
         <article class="card reveal">
-          <div class="card-viz">
-            <div class="viz-head"><span>Data Model</span><span>Star Schema</span></div>
-            <svg viewBox="0 0 300 96" aria-hidden="true">
-              <g stroke="#36c5cf" stroke-width="2" fill="none" opacity=".6">
-                <line x1="150" y1="48" x2="70" y2="22"/><line x1="150" y1="48" x2="230" y2="22"/>
-                <line x1="150" y1="48" x2="70" y2="74"/><line x1="150" y1="48" x2="230" y2="74"/>
-                <line x1="150" y1="48" x2="150" y2="14"/><line x1="150" y1="48" x2="150" y2="82"/>
-              </g>
-              <g fill="#1c2432" stroke="#36c5cf" stroke-width="1.5">
-                <rect x="52" y="12" width="36" height="20" rx="3"/><rect x="212" y="12" width="36" height="20" rx="3"/>
-                <rect x="52" y="64" width="36" height="20" rx="3"/><rect x="212" y="64" width="36" height="20" rx="3"/>
-                <rect x="132" y="4" width="36" height="20" rx="3"/><rect x="132" y="72" width="36" height="20" rx="3"/>
-              </g>
-              <rect x="126" y="38" width="48" height="22" rx="4" fill="#f2c811"/>
-              <text x="150" y="53" text-anchor="middle" fill="#15110a" font-family="JetBrains Mono" font-size="9" font-weight="700">FACT</text>
-            </svg>
+          <!-- Slideshow: images only, click = fullscreen -->
+          <div class="slide-wrap" id="marutiSlideWrap" title="Click image to expand">
+            <img class="slide active" id="marutiSlide0" src="marutiSlide0.png" alt="Maruti Suzuki Sales Dashboard Screenshot 1" />
+            <img class="slide" id="marutiSlide1" src="marutiSlide1.png" alt="Maruti Suzuki Sales Dashboard Screenshot 2" />
+            <img class="slide" id="marutiSlide2" src="marutiSlide2.png" alt="Maruti Suzuki Sales Dashboard Screenshot 3" />
+            <img class="slide" id="marutiSlide3" src="marutiSlide3.png" alt="Maruti Suzuki Sales Dashboard Screenshot 4" />
+            <img class="slide" id="marutiSlide4" src="marutiSlide4.png" alt="Maruti Suzuki Sales Dashboard Screenshot 5" />
+            <img class="slide" id="marutiSlide5" src="marutiSlide5.png" alt="Maruti Suzuki Sales Dashboard Screenshot 6" />
+            <button class="slide-arrow prev" id="marutiPrev" aria-label="Previous slide">&#8249;</button>
+            <button class="slide-arrow next" id="marutiNext" aria-label="Next slide">&#8250;</button>
+            <div class="slide-dots" id="marutiDots">
+              <div class="slide-dot active" data-idx="0"></div>
+              <div class="slide-dot" data-idx="1"></div>
+              <div class="slide-dot" data-idx="2"></div>
+              <div class="slide-dot" data-idx="3"></div>
+              <div class="slide-dot" data-idx="4"></div>
+              <div class="slide-dot" data-idx="5"></div>
+            </div>
+            <div class="slide-hint">&#128269; Click to expand</div>
           </div>
+          <!-- Video strip: SEPARATE element below slideshow, no overlap -->
+          <div class="card-video-strip" id="marutiVideoBtn" role="button" tabindex="0" aria-label="Watch Maruti Suzuki Sales Dashboard demo video">
+            <div class="vid-play-btn">&#9654;</div>
+            <div>
+              <div class="vid-label">Watch Dashboard Demo</div>
+              <div class="vid-sublabel">Maruti_LN.mp4 &middot; Full walkthrough</div>
+            </div>
+            <div class="vid-arrow">&#8594;</div>
+          </div>
+          <!-- Card body -->
           <div class="card-body">
-            <h3>Star Schema Data Model</h3>
-            <p>Designed and implemented a star schema data model with fact and dimension tables to support accurate, performant reporting.</p>
-            <div class="card-out">↳ Improved report accuracy &amp; query performance</div>
-            <div class="card-tags"><span>Data Modeling</span><span>DAX</span><span>Power BI</span></div>
+            <h3>Maruti Suzuki Sales Dashboard</h3>
+            <p>A comprehensive automotive sales analytics dashboard tracking revenue, unit sales, states performance, and customer segmentation using Advanced DAX and Power BI.</p>
+            <div class="card-out">&#9642; Enabled dynamic filtering across 15+ models to identify key revenue drivers and top-performing regions.</div>
+            <div class="card-tags">
+              <span>Power BI</span><span>DAX</span><span>Automotive Analytics</span><span>Sales Analysis</span><span>Customer Insights</span>
+            </div>
           </div>
         </article>
-
+        
         <!-- Card 3: line (trend / DAX) -->
         <article class="card reveal">
           <div class="card-viz">
@@ -670,7 +685,7 @@
   <div class="video-modal" id="videoModal" role="dialog" aria-modal="true">
     <div class="video-inner">
       <button class="vm-close" id="vmClose">&#10005;</button>
-       <video id="finVideo" controls preload="none" poster="finPoster.png">
+      <video id="finVideo" controls preload="none" poster="finPoster.png">
         <source src="Finance_LN.mp4" type="video/mp4" />
         Your browser does not support HTML5 video.
       </video>
@@ -679,46 +694,197 @@
   </div>
 
   <script>
-  
-  // Slideshow logic
+  // General Slideshow & Lightbox Logic
   (function(){
-    var sl=Array.from(document.querySelectorAll('#finSlideWrap .slide'));
-    var dt=Array.from(document.querySelectorAll('#finDots .slide-dot'));
-    var c=0,t;
-    function go(n){sl[c].classList.remove('active');dt[c].classList.remove('active');c=(n+sl.length)%sl.length;sl[c].classList.add('active');dt[c].classList.add('active');}
-    function sa(){t=setInterval(function(){go(c+1);},3500);}
-    function st(){clearInterval(t);}
-    document.getElementById('finPrev').addEventListener('click',function(e){e.stopPropagation();st();go(c-1);sa();});
-    document.getElementById('finNext').addEventListener('click',function(e){e.stopPropagation();st();go(c+1);sa();});
-    dt.forEach(function(d){d.addEventListener('click',function(e){e.stopPropagation();st();go(parseInt(d.dataset.idx));sa();});});
-    sa();
-    window._fC=function(){return c;};window._fS=sl;
+    // Setup all slideshows on the page
+    document.querySelectorAll('.slide-wrap').forEach(function(wrap){
+      var slides = Array.from(wrap.querySelectorAll('.slide'));
+      var dots = Array.from(wrap.querySelectorAll('.slide-dot'));
+      var prevBtn = wrap.querySelector('.slide-arrow.prev');
+      var nextBtn = wrap.querySelector('.slide-arrow.next');
+      var current = 0;
+      var timer;
+
+      function goTo(n) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (n + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      function startTimer() {
+        timer = setInterval(function(){ goTo(current + 1); }, 3500);
+      }
+
+      function stopTimer() {
+        clearInterval(timer);
+      }
+
+      if(prevBtn) {
+        prevBtn.addEventListener('click', function(e){
+          e.stopPropagation();
+          stopTimer();
+          goTo(current - 1);
+          startTimer();
+        });
+      }
+
+      if(nextBtn) {
+        nextBtn.addEventListener('click', function(e){
+          e.stopPropagation();
+          stopTimer();
+          goTo(current + 1);
+          startTimer();
+        });
+      }
+
+      dots.forEach(function(dot){
+        dot.addEventListener('click', function(e){
+          e.stopPropagation();
+          stopTimer();
+          goTo(parseInt(dot.dataset.idx));
+          startTimer();
+        });
+      });
+
+      startTimer();
+
+      // Store current index and slides array on the wrapper element for the lightbox to read
+      wrap._current = function() { return current; };
+      wrap._slides = slides;
+    });
+
+    // Setup Fullscreen Lightbox
+    var overlay = document.getElementById('fsOverlay');
+    var fsImg = document.getElementById('fsImg');
+    var counter = document.getElementById('fsCounter');
+    var fsPrev = document.getElementById('fsPrev');
+    var fsNext = document.getElementById('fsNext');
+    var fsClose = document.getElementById('fsClose');
+    
+    var activeSlides = [];
+    var activeIdx = 0;
+
+    function openLightbox(slides, startIdx) {
+      activeSlides = slides;
+      activeIdx = startIdx;
+      updateLightbox();
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function navigateLightbox(dir) {
+      if (!activeSlides.length) return;
+      activeIdx = (activeIdx + dir + activeSlides.length) % activeSlides.length;
+      updateLightbox();
+    }
+
+    function updateLightbox() {
+      if (!activeSlides.length) return;
+      fsImg.src = activeSlides[activeIdx].src;
+      counter.textContent = (activeIdx + 1) + ' / ' + activeSlides.length;
+    }
+
+    // Bind click events on all slide wraps to open lightbox
+    document.querySelectorAll('.slide-wrap').forEach(function(wrap){
+      wrap.addEventListener('click', function(e){
+        if (e.target.closest('.slide-arrow') || e.target.closest('.slide-dots')) return;
+        if (wrap._slides && wrap._slides.length) {
+          openLightbox(wrap._slides, wrap._current());
+        }
+      });
+    });
+
+    if(fsClose) fsClose.addEventListener('click', closeLightbox);
+    if(fsPrev) fsPrev.addEventListener('click', function(){ navigateLightbox(-1); });
+    if(fsNext) fsNext.addEventListener('click', function(){ navigateLightbox(1); });
+    
+    if(overlay) {
+      overlay.addEventListener('click', function(e){
+        if (e.target === overlay) closeLightbox();
+      });
+    }
+
+    document.addEventListener('keydown', function(e){
+      if (!overlay || !overlay.classList.contains('open')) return;
+      if (e.key === 'ArrowLeft') navigateLightbox(-1);
+      if (e.key === 'ArrowRight') navigateLightbox(1);
+      if (e.key === 'Escape') closeLightbox();
+    });
   })();
-  // Fullscreen viewer
+
+  // Dynamic Video Modal Logic
   (function(){
-    var ov=document.getElementById('fsOverlay'),img=document.getElementById('fsImg'),ctr=document.getElementById('fsCounter'),fc=0;
-    function op(i){fc=i;img.src=window._fS[fc].src;ctr.textContent=(fc+1)+' / '+window._fS.length;ov.classList.add('open');document.body.style.overflow='hidden';}
-    function cl(){ov.classList.remove('open');document.body.style.overflow='';}
-    function nv(d){fc=(fc+d+window._fS.length)%window._fS.length;img.src=window._fS[fc].src;ctr.textContent=(fc+1)+' / '+window._fS.length;}
-    document.getElementById('finSlideWrap').addEventListener('click',function(e){if(e.target.closest('.slide-arrow')||e.target.closest('.slide-dots'))return;op(window._fC());});
-    document.getElementById('fsClose').addEventListener('click',cl);
-    document.getElementById('fsPrev').addEventListener('click',function(){nv(-1);});
-    document.getElementById('fsNext').addEventListener('click',function(){nv(1);});
-    ov.addEventListener('click',function(e){if(e.target===ov)cl();});
-    document.addEventListener('keydown',function(e){if(!ov.classList.contains('open'))return;if(e.key==='ArrowLeft')nv(-1);if(e.key==='ArrowRight')nv(1);if(e.key==='Escape')cl();});
+    var modal = document.getElementById('videoModal');
+    var video = document.getElementById('finVideo');
+    var label = modal.querySelector('.vm-label');
+    var closeBtn = document.getElementById('vmClose');
+
+    function openVideo(videoSrc, posterSrc, videoLabel) {
+      if (video) {
+        video.src = videoSrc;
+        video.poster = posterSrc;
+        if (label) label.textContent = videoLabel;
+        video.load(); // Force the video element to reload with the new source and poster
+      }
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeVideo() {
+      modal.classList.remove('open');
+      if (video) {
+        video.pause();
+        video.currentTime = 0;
+      }
+      document.body.style.overflow = '';
+    }
+
+    // Bind events for Finance Dashboard Video
+    var finBtn = document.getElementById('finVideoBtn');
+    if (finBtn) {
+      finBtn.addEventListener('click', function(){
+        openVideo('Finance_LN.mp4', 'finPoster.png', 'Finance Dashboard Demo');
+      });
+      finBtn.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' ') {
+          openVideo('Finance_LN.mp4', 'finPoster.png', 'Finance Dashboard Demo');
+        }
+      });
+    }
+
+    // Bind events for Maruti Suzuki Dashboard Video
+    var marutiBtn = document.getElementById('marutiVideoBtn');
+    if (marutiBtn) {
+      marutiBtn.addEventListener('click', function(){
+        openVideo('Maruti_LN.mp4', 'marutiPoster.png', 'Maruti Suzuki Sales Dashboard Demo');
+      });
+      marutiBtn.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' ') {
+          openVideo('Maruti_LN.mp4', 'marutiPoster.png', 'Maruti Suzuki Sales Dashboard Demo');
+        }
+      });
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeVideo);
+    if (modal) {
+      modal.addEventListener('click', function(e){
+        if (e.target === modal) closeVideo();
+      });
+    }
+    document.addEventListener('keydown', function(e){
+      if (modal && modal.classList.contains('open') && e.key === 'Escape') {
+        closeVideo();
+      }
+    });
   })();
-  // Video modal
-  (function(){
-    var m=document.getElementById('videoModal'),v=document.getElementById('finVideo');
-    function op(){m.classList.add('open');document.body.style.overflow='hidden';}
-    function cl(){m.classList.remove('open');v.pause();v.currentTime=0;document.body.style.overflow='';}
-    document.getElementById('finVideoBtn').addEventListener('click',op);
-    document.getElementById('finVideoBtn').addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')op();});
-    document.getElementById('vmClose').addEventListener('click',cl);
-    m.addEventListener('click',function(e){if(e.target===m)cl();});
-    document.addEventListener('keydown',function(e){if(m.classList.contains('open')&&e.key==='Escape')cl();});
-  })();
-  </script>
+</script>
 
 </body>
 </html>
