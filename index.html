@@ -668,7 +668,7 @@ footer {
   <div class="rail-socials">
     <div class="rail-status"><span class="pulse"></span> Open to work</div>
     <div class="social-links">
-      <a class="social-btn email" href="mailto:bhuvaneshvaranv@gmail.com" target="_blank" rel="noopener" title="Email">✉</a>
+      <a class="social-btn email" href="mailto:bhuvaneshvaranv@gmail.com" title="Email Bhuvaneshwaran">✉</a>
       <a class="social-btn wa" href="https://wa.me/918056601119?text=Hi%20Bhuvaneshwaran%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect!" target="_blank" rel="noopener" title="WhatsApp">💬</a>
       <a class="social-btn li" href="https://www.linkedin.com/in/bhuvaneshwaran-v" target="_blank" rel="noopener" title="LinkedIn" style="font-family:'Space Grotesk';font-weight:700;color:#0a66c2;font-size:13px;">in</a>
       <a class="social-btn gh" href="https://bhuvaneshvaranv-droid.github.io/Portfolio/" target="_blank" rel="noopener" title="GitHub Portfolio">
@@ -955,7 +955,7 @@ footer {
       <h2>Let's build a report worth opening.</h2>
       <p>Open to Data Analyst &amp; Power BI Developer roles. Drop a line — I'd love to talk about how I can help your team turn data into decisions.</p>
       <div class="contact-links">
-        <a class="contact-link email" href="mailto:bhuvaneshvaranv@gmail.com" target="_blank" rel="noopener">
+        <a class="contact-link email" href="mailto:bhuvaneshvaranv@gmail.com">
           <span class="contact-icon">✉️</span>
           <span class="contact-label">Email</span>
           <span class="contact-sub">Send a message</span>
@@ -1055,20 +1055,6 @@ document.querySelectorAll('.bar > i').forEach(el => barIO.observe(el));
 /* Active nav */
 const sections = document.querySelectorAll('main section');
 const navLinks = document.querySelectorAll('#railNav a');
-new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting)
-      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
-  });
-}, { rootMargin: '-45% 0px -50% 0px' }).observe(sections[0]) || sections.forEach(s =>
-  new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting)
-        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
-    });
-  }, { rootMargin: '-45% 0px -50% 0px' }).observe(s));
-
-/* (fix) proper nav observer */
 const navIO2 = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting)
