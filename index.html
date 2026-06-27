@@ -434,13 +434,27 @@ h2.title {
 .contact-icon { font-size: 20px; line-height: 1; }
 .contact-label { font-family: "Space Grotesk"; font-weight: 600; font-size: 13px; }
 .contact-sub   { font-family: "JetBrains Mono"; font-size: 9.5px; color: var(--faint); letter-spacing: .5px; }
+.resume-btns {
+  display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 20px;
+}
 .resume-btn {
-  display: inline-flex; align-items: center; gap: 9px; margin-top: 18px;
+  display: inline-flex; align-items: center; gap: 9px;
   border: 1px solid var(--line); border-radius: 10px; padding: 12px 24px;
   font-size: 14px; color: var(--muted); background: var(--surface);
-  transition: all .2s; position: relative;
+  transition: all .2s; position: relative; font-weight: 500;
 }
-.resume-btn:hover { border-color: var(--violet); color: var(--violet); transform: translateY(-2px); box-shadow: 0 10px 30px -12px rgba(167,139,250,.35); }
+.resume-btn:hover {
+  border-color: var(--violet); color: var(--violet);
+  transform: translateY(-2px); box-shadow: 0 10px 30px -12px rgba(167,139,250,.35);
+}
+.resume-btn-view {
+  background: linear-gradient(135deg, var(--amber), #e8b800);
+  color: #14110a; border-color: transparent; font-weight: 600;
+}
+.resume-btn-view:hover {
+  border-color: transparent; color: #14110a;
+  box-shadow: 0 10px 30px -12px rgba(245,200,66,.5);
+}
 
 /* ============================================================
    FOOTER
@@ -837,7 +851,6 @@ footer {
       <a href="#about"><span class="nav-icon">👤</span> About</a>
       <a href="#skills"><span class="nav-icon">⚙️</span> Skills</a>
       <a href="#projects"><span class="nav-icon">🗂</span> Dashboards</a>
-      <a href="#resume"><span class="nav-icon">📄</span> Resume</a>
       <a href="#experience"><span class="nav-icon">💼</span> Experience</a>
       <a href="#education"><span class="nav-icon">🎓</span> Education</a>
       <a href="#contact"><span class="nav-icon">✉️</span> Contact</a>
@@ -873,7 +886,6 @@ footer {
   <a href="#about">👤 About</a>
   <a href="#skills">⚙️ Skills</a>
   <a href="#projects">🗂 Dashboards</a>
-  <a href="#resume">📄 Resume</a>
   <a href="#experience">💼 Experience</a>
   <a href="#education">🎓 Education</a>
   <a href="#contact">✉️ Contact</a>
@@ -1086,176 +1098,6 @@ footer {
     </div>
   </section>
 
-  <!-- ====== RESUME ====== -->
-  <section id="resume">
-    <div class="eyebrow reveal">Full Profile</div>
-    <h2 class="title reveal">Resume</h2>
-    <p class="section-sub reveal">Complete professional profile — all details from my resume in one place.</p>
-
-    <div class="resume-page reveal">
-
-      <!-- Header -->
-      <div class="res-header">
-        <div>
-          <div class="res-name">Bhuvaneshwaran V</div>
-          <div class="res-title">DATA ANALYST &nbsp;|&nbsp; POWER BI DEVELOPER</div>
-          <div class="res-contacts">
-            <a class="res-contact-chip" href="tel:+918056601119">📞 +91-8056601119</a>
-            <a class="res-contact-chip" href="mailto:bhuvaneshvaranv@gmail.com">✉ bhuvaneshvaranv@gmail.com</a>
-            <a class="res-contact-chip" href="https://www.linkedin.com/in/bhuvaneshwaran-v" target="_blank" rel="noopener">in LinkedIn</a>
-            <a class="res-contact-chip" href="https://bhuvaneshvaranv-droid.github.io/Portfolio/" target="_blank" rel="noopener">⌥ Portfolio / GitHub</a>
-            <span class="res-contact-chip">📍 Chennai, Tamil Nadu</span>
-          </div>
-        </div>
-        <a class="res-download-btn" href="Bhuvaneshwaran_Resume.pdf" target="_blank" rel="noopener">
-          ↓ Download PDF
-        </a>
-      </div>
-
-      <!-- Body -->
-      <div class="res-body">
-
-        <!-- Professional Summary -->
-        <div>
-          <div class="res-sec-title">Professional Summary</div>
-          <p class="res-summary">
-            Results-driven <b>Data Analyst</b> and <b>Power BI Developer</b> with hands-on experience designing end-to-end analytics solutions — from raw data ingestion to executive-ready dashboards. Proficient in <b>Advanced DAX</b>, <b>Star Schema</b> data modeling, <b>Power Query ETL</b>, SQL, and Advanced Excel. Demonstrated ability to build scalable data models, automate reporting workflows, and translate complex datasets into <b>actionable business insights</b> that support data-driven decision-making across diverse industries.
-          </p>
-        </div>
-
-        <!-- Technical Skills -->
-        <div>
-          <div class="res-sec-title">Technical Skills</div>
-          <div class="res-skills-table">
-            <div class="res-skill-row">
-              <div class="res-skill-cat">BI &amp; Viz</div>
-              <div class="res-skill-val">Power BI Desktop &amp; Service, Dashboards, KPI Reports, Slicers, Drill-downs, Bookmarks, HTML KPI Cards</div>
-            </div>
-            <div class="res-skill-row">
-              <div class="res-skill-cat">Modeling</div>
-              <div class="res-skill-val">Star Schema, Fact &amp; Dimension Tables, DAX Measures, Calculated Columns, Time Intelligence (YOY, MOM, MTD, YTD)</div>
-            </div>
-            <div class="res-skill-row">
-              <div class="res-skill-cat">ETL &amp; Prep</div>
-              <div class="res-skill-val">Power Query (Excel &amp; Power BI), Data Cleaning, Transformation, Validation, Automated Reporting Workflows</div>
-            </div>
-            <div class="res-skill-row">
-              <div class="res-skill-cat">SQL</div>
-              <div class="res-skill-val">Joins, Subqueries, Aggregations, Filtering, Oracle SQL</div>
-            </div>
-            <div class="res-skill-row">
-              <div class="res-skill-cat">Excel</div>
-              <div class="res-skill-val">Advanced Functions, Pivot Tables, Power Query, Data Analysis</div>
-            </div>
-            <div class="res-skill-row">
-              <div class="res-skill-cat">Soft Skills</div>
-              <div class="res-skill-val">Requirement Gathering, Business Analysis, Analytical Thinking, Problem-Solving, Stakeholder Communication</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Projects -->
-        <div>
-          <div class="res-sec-title">Projects</div>
-          <div class="res-project">
-            <div class="res-proj-top">
-              <div class="res-proj-name">Maruti Suzuki Automotive Sales Dashboard</div>
-              <div class="res-proj-date">2024 – 2026</div>
-            </div>
-            <div class="res-proj-sub">Portfolio Project — Power BI</div>
-            <div class="res-proj-tags">
-              <span class="res-proj-tag">Power BI Desktop</span>
-              <span class="res-proj-tag">Advanced DAX</span>
-              <span class="res-proj-tag">Star Schema</span>
-              <span class="res-proj-tag">Power Query</span>
-              <span class="res-proj-tag">Custom JSON Theme</span>
-              <span class="res-proj-tag">HTML KPI Cards</span>
-            </div>
-            <ul class="res-proj-list">
-              <li>Designed a comprehensive <b>dark-themed Power BI report</b> analyzing <b>20,000+ sales transactions</b> across models, regions, dealers, and customer segments (2020–2026).</li>
-              <li>Built a <b>star schema data model</b> with Sales and Customer fact tables connected to <b>6 dimension tables</b>, optimizing query performance and report accuracy.</li>
-              <li>Engineered <b>40+ DAX measures</b> including YOY, MOM (DATESBETWEEN + EDATE for slicer compatibility), MTD, YTD, Prior Year comparisons, and a dynamic Last Refresh indicator.</li>
-              <li>Designed <b>HTML Content KPI cards</b> in a horizontal 6-card executive overview layout with gradient styling using the Bird Finsight purple palette.</li>
-              <li>Implemented <b>multi-page navigation</b> for seamless flow across Overview, Model Analysis, Regional Performance, and Customer Insights pages.</li>
-              <li>Created a <b>bookmark-based show/hide slicer panel</b> using bookmarks and selection pane for a clean full-screen dashboard with dynamic filter reset.</li>
-              <li>Applied <b>drill-through navigation</b>, custom tooltip pages, a clickable car model gallery, and a custom JSON theme for consistent dark-mode branding.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Internship Experience -->
-        <div>
-          <div class="res-sec-title">Internship Experience</div>
-          <div class="res-exp">
-            <div class="res-exp-top">
-              <div class="res-exp-role">Data Analytics Intern</div>
-              <div class="res-exp-date">2023</div>
-            </div>
-            <div class="res-exp-co">ACSASS Company, Chennai</div>
-            <div class="res-exp-tags">
-              <span class="res-exp-tag">Power BI</span>
-              <span class="res-exp-tag">DAX</span>
-              <span class="res-exp-tag">Power Query</span>
-              <span class="res-exp-tag">SQL</span>
-              <span class="res-exp-tag">Excel</span>
-              <span class="res-exp-tag">Star Schema</span>
-            </div>
-            <ul class="res-exp-list">
-              <li>Built <b>interactive Power BI dashboards</b> featuring slicers, drill-downs, and KPI indicators to monitor key business metrics for stakeholders.</li>
-              <li>Designed and implemented <b>Star Schema data models</b> that improved report accuracy and query performance across multiple datasets.</li>
-              <li>Created <b>advanced DAX measures</b> and calculated columns for performance tracking, trend analysis, and comparative period-over-period reporting.</li>
-              <li>Performed end-to-end <b>ETL pipelines</b> — data extraction, cleaning, transformation, and validation — using Power Query and Excel.</li>
-              <li>Wrote <b>optimized SQL queries</b> including joins, subqueries, and aggregations to extract and analyze large datasets from relational databases.</li>
-              <li><b>Automated data preparation</b> and reporting workflows, significantly reducing manual effort and improving operational efficiency.</li>
-              <li>Applied <b>data visualization best practices</b> to deliver clear, stakeholder-ready reports translating raw data into actionable business insights.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Education -->
-        <div>
-          <div class="res-sec-title">Education</div>
-          <div class="res-edu-grid">
-            <div class="res-edu-card">
-              <div class="res-edu-degree">Master of Business Administration</div>
-              <div class="res-edu-spec">HR &amp; Finance</div>
-              <div class="res-edu-inst">Kongu Arts and Science College, Erode</div>
-              <div class="res-edu-meta">
-                <span class="res-edu-yr">2021 – 2023</span>
-                <span class="res-edu-score">72%</span>
-              </div>
-            </div>
-            <div class="res-edu-card">
-              <div class="res-edu-degree">Bachelor of Science</div>
-              <div class="res-edu-spec">Mathematics</div>
-              <div class="res-edu-inst">Bishop Heber College, Trichy</div>
-              <div class="res-edu-meta">
-                <span class="res-edu-yr">2019 – 2021</span>
-                <span class="res-edu-score">77%</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Languages -->
-        <div>
-          <div class="res-sec-title">Languages</div>
-          <div class="res-lang-row">
-            <div class="res-lang-chip">
-              <span class="lang-name">English</span>
-              <span class="lang-level">Professional Proficiency</span>
-            </div>
-            <div class="res-lang-chip">
-              <span class="lang-name">Tamil</span>
-              <span class="lang-level">Native</span>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /res-body -->
-    </div><!-- /resume-page -->
-  </section>
-
   <!-- ====== EXPERIENCE ====== -->
   <section id="experience">
     <div class="eyebrow reveal">Journey</div>
@@ -1328,7 +1170,10 @@ footer {
           <span class="contact-sub">View my portfolio</span>
         </a>
       </div>
-      <a class="resume-btn" href="Bhuvaneshwaran_Resume.pdf" target="_blank" rel="noopener">↓ &nbsp;Download Résumé (PDF)</a>
+      <div class="resume-btns">
+        <a class="resume-btn resume-btn-view" href="Bhuvaneshwaran_Resume.pdf" target="_blank" rel="noopener">👁 &nbsp;View Résumé</a>
+        <a class="resume-btn" href="Bhuvaneshwaran_Resume.pdf" download target="_blank" rel="noopener">↓ &nbsp;Download Résumé</a>
+      </div>
     </div>
   </section>
 </main>
