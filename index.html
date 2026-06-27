@@ -1054,21 +1054,21 @@ footer {
         </div>
       </article>
 
-      <!-- Card 3 -->
+      <!-- Card 3: Swiggy Food Delivery Dashboard -->
       <article class="card reveal">
-        <div class="card-viz">
-          <div class="viz-head"><span>Trend Analysis</span><span>DAX</span></div>
-          <svg viewBox="0 0 300 96" preserveAspectRatio="none" aria-hidden="true">
-            <polyline points="6,72 50,60 94,66 138,40 182,48 226,24 290,14" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <polygon points="6,72 50,60 94,66 138,40 182,48 226,24 290,14 290,96 6,96" fill="#a78bfa" opacity="0.1"/>
-            <circle cx="290" cy="14" r="4" fill="#a78bfa"/>
-          </svg>
+        <div class="slide-wrap" id="swiggySlideWrap" title="Click image to expand">
+          <img class="slide active" src="swiggySlide0.png" alt="Swiggy Food Delivery Dashboard" />
+          <div class="slide-hint">&#128269; Click to expand</div>
         </div>
         <div class="card-body">
-          <h3>Performance &amp; Trend Report</h3>
-          <p>Advanced DAX measures and calculated columns for performance tracking, trend analysis, and comparative period-over-period reporting.</p>
-          <div class="card-out">&#9642; Faster, comparative insight</div>
-          <div class="card-tags"><span>DAX</span><span>Calc Columns</span><span>Trend</span></div>
+          <h3>Swiggy Food Delivery Dashboard</h3>
+          <p>Analyzed 197K+ food delivery orders across India to surface revenue trends by city, state, restaurant, and food type. Built with advanced DAX (RANKX, MTD/YTD, MOM), dynamic slicers, and a Swiggy-branded dark-orange theme.</p>
+          <div class="card-out">&#9642; 53.01M total sales · 197K orders · 4.34 avg rating across 15+ states</div>
+          <div class="card-tags">
+            <span>Power BI</span><span>Advanced DAX</span><span>Time Intelligence</span>
+            <span>RANKX</span><span>Power Query</span><span>KPI Reporting</span>
+            <span>Bookmark / Slicer UX</span><span>Dashboard Design</span>
+          </div>
         </div>
       </article>
 
@@ -1262,17 +1262,25 @@ sections.forEach(s => navIO2.observe(s));
 (function(){
   document.querySelectorAll('.slide-wrap').forEach(function(wrap){
     var slides = Array.from(wrap.querySelectorAll('.slide'));
-    var dots = Array.from(wrap.querySelectorAll('.slide-dot'));
+    var dots   = Array.from(wrap.querySelectorAll('.slide-dot'));
     var prevBtn = wrap.querySelector('.slide-arrow.prev');
     var nextBtn = wrap.querySelector('.slide-arrow.next');
     var current = 0, timer;
+
     function goTo(n) {
-      slides[current].classList.remove('active'); dots[current].classList.remove('active');
+      if(slides.length <= 1) return; /* single image — nothing to rotate */
+      slides[current].classList.remove('active');
+      if(dots[current]) dots[current].classList.remove('active');
       current = (n + slides.length) % slides.length;
-      slides[current].classList.add('active'); dots[current].classList.add('active');
+      slides[current].classList.add('active');
+      if(dots[current]) dots[current].classList.add('active');
     }
-    function start() { timer = setInterval(function(){ goTo(current+1); }, 3500); }
+    function start() {
+      if(slides.length <= 1) return; /* no timer needed for single image */
+      timer = setInterval(function(){ goTo(current+1); }, 3500);
+    }
     function stop() { clearInterval(timer); }
+
     if(prevBtn) prevBtn.addEventListener('click', function(e){ e.stopPropagation(); stop(); goTo(current-1); start(); });
     if(nextBtn) nextBtn.addEventListener('click', function(e){ e.stopPropagation(); stop(); goTo(current+1); start(); });
     dots.forEach(function(d){ d.addEventListener('click', function(e){ e.stopPropagation(); stop(); goTo(parseInt(d.dataset.idx)); start(); }); });
