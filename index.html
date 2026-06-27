@@ -638,6 +638,184 @@ footer {
   .brand-name { font-size: 15px; }
   .brand-role { font-size: 10.5px; }
 }
+/* ============================================================
+   RESUME SECTION
+============================================================ */
+.resume-page {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: 18px; overflow: hidden;
+  position: relative; margin-top: 32px;
+}
+.resume-page::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--amber), transparent);
+}
+
+/* Resume header strip */
+.res-header {
+  background: linear-gradient(135deg, #0c1220, #0a0f18);
+  border-bottom: 1px solid var(--line);
+  padding: 28px 32px 24px;
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 20px; flex-wrap: wrap;
+}
+.res-name { font-family: "Space Grotesk"; font-weight: 700; font-size: clamp(22px,3vw,32px); letter-spacing: -.5px; }
+.res-title { color: var(--amber); font-family: "JetBrains Mono"; font-size: 12px; letter-spacing: 1px; margin-top: 4px; }
+.res-contacts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.res-contact-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 1px solid var(--line); border-radius: 8px; padding: 5px 11px;
+  font-family: "JetBrains Mono"; font-size: 11px; color: var(--muted);
+  background: var(--surface-2); transition: border-color .18s, color .18s;
+  text-decoration: none;
+}
+.res-contact-chip:hover { border-color: var(--amber); color: var(--amber); }
+.res-download-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(135deg, var(--amber), #e8b800);
+  color: #14110a; border: none; border-radius: 10px;
+  padding: 11px 20px; font-family: "Space Grotesk"; font-weight: 600; font-size: 13.5px;
+  cursor: pointer; text-decoration: none; flex-shrink: 0; align-self: flex-start;
+  transition: transform .16s, box-shadow .16s;
+}
+.res-download-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -10px rgba(245,200,66,.6); }
+
+/* Resume body */
+.res-body { padding: 28px 32px 32px; display: flex; flex-direction: column; gap: 28px; }
+
+/* Section heading inside resume */
+.res-sec-title {
+  font-family: "JetBrains Mono"; font-size: 10px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--amber);
+  display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+  padding-bottom: 10px; border-bottom: 1px solid var(--line-soft);
+}
+.res-sec-title::before { content: ""; width: 16px; height: 1px; background: var(--amber); }
+
+/* Summary */
+.res-summary {
+  color: var(--muted); font-size: 14.5px; line-height: 1.78;
+}
+.res-summary b { color: var(--text); font-weight: 500; }
+
+/* Skills table */
+.res-skills-table { display: flex; flex-direction: column; gap: 0; }
+.res-skill-row {
+  display: grid; grid-template-columns: 110px 1fr;
+  gap: 0; padding: 10px 0; border-bottom: 1px solid var(--line-soft);
+  align-items: start;
+}
+.res-skill-row:last-child { border-bottom: 0; }
+.res-skill-cat {
+  font-family: "JetBrains Mono"; font-size: 10.5px; color: var(--amber);
+  font-weight: 600; letter-spacing: .5px; padding-right: 14px; padding-top: 1px;
+  border-right: 1px solid var(--line-soft);
+}
+.res-skill-val {
+  color: var(--muted); font-size: 13.5px; line-height: 1.6; padding-left: 16px;
+}
+
+/* Project card in resume */
+.res-project {
+  background: var(--surface-2); border: 1px solid var(--line);
+  border-radius: 12px; padding: 20px 22px; position: relative; overflow: hidden;
+}
+.res-project::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--amber);
+}
+.res-proj-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+.res-proj-name { font-family: "Space Grotesk"; font-weight: 600; font-size: 16px; }
+.res-proj-date { font-family: "JetBrains Mono"; font-size: 11px; color: var(--faint); flex-shrink: 0; }
+.res-proj-sub { font-size: 13px; color: var(--amber); margin-bottom: 10px; font-family: "JetBrains Mono"; font-size: 11px; }
+.res-proj-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.res-proj-tag {
+  font-family: "JetBrains Mono"; font-size: 10px; color: var(--muted);
+  background: var(--surface-3); border: 1px solid var(--line);
+  border-radius: 6px; padding: 3px 8px;
+}
+.res-proj-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.res-proj-list li {
+  color: var(--muted); font-size: 13.5px; line-height: 1.65;
+  position: relative; padding-left: 16px;
+}
+.res-proj-list li::before {
+  content: ""; position: absolute; left: 0; top: 8px;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--amber); opacity: .7;
+}
+.res-proj-list li b { color: var(--text); font-weight: 500; }
+
+/* Experience in resume */
+.res-exp {
+  background: var(--surface-2); border: 1px solid var(--line);
+  border-radius: 12px; padding: 20px 22px; position: relative; overflow: hidden;
+}
+.res-exp::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--teal);
+}
+.res-exp-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+.res-exp-role { font-family: "Space Grotesk"; font-weight: 600; font-size: 16px; }
+.res-exp-date { font-family: "JetBrains Mono"; font-size: 11px; color: var(--faint); flex-shrink: 0; }
+.res-exp-co { font-size: 13px; color: var(--teal); margin-bottom: 10px; font-family: "JetBrains Mono"; font-size: 11.5px; }
+.res-exp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.res-exp-tag {
+  font-family: "JetBrains Mono"; font-size: 10px; color: var(--muted);
+  background: var(--surface-3); border: 1px solid var(--line);
+  border-radius: 6px; padding: 3px 8px;
+}
+.res-exp-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.res-exp-list li {
+  color: var(--muted); font-size: 13.5px; line-height: 1.65;
+  position: relative; padding-left: 16px;
+}
+.res-exp-list li::before {
+  content: ""; position: absolute; left: 0; top: 8px;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--teal); opacity: .7;
+}
+.res-exp-list li b { color: var(--text); font-weight: 500; }
+
+/* Education in resume */
+.res-edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.res-edu-card {
+  background: var(--surface-2); border: 1px solid var(--line);
+  border-radius: 12px; padding: 18px 20px; position: relative; overflow: hidden;
+}
+.res-edu-card::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--violet);
+}
+.res-edu-degree { font-family: "Space Grotesk"; font-weight: 600; font-size: 15px; margin-bottom: 2px; }
+.res-edu-spec { color: var(--violet); font-family: "JetBrains Mono"; font-size: 11px; margin-bottom: 6px; }
+.res-edu-inst { color: var(--muted); font-size: 13px; }
+.res-edu-meta { display: flex; justify-content: space-between; margin-top: 8px; }
+.res-edu-yr { font-family: "JetBrains Mono"; font-size: 10.5px; color: var(--faint); }
+.res-edu-score { font-family: "Space Grotesk"; font-weight: 700; font-size: 18px; color: var(--amber); }
+
+/* Languages row */
+.res-lang-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.res-lang-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid var(--line); border-radius: 10px; padding: 9px 16px;
+  background: var(--surface-2); font-size: 13.5px;
+}
+.res-lang-chip .lang-name { font-family: "Space Grotesk"; font-weight: 600; }
+.res-lang-chip .lang-level { font-family: "JetBrains Mono"; font-size: 10.5px; color: var(--muted); }
+
+/* Responsive resume */
+@media (max-width: 768px) {
+  .res-header { padding: 22px 20px 18px; }
+  .res-body { padding: 20px 20px 24px; }
+  .res-skill-row { grid-template-columns: 90px 1fr; }
+  .res-edu-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 500px) {
+  .res-header { padding: 18px 16px; }
+  .res-body { padding: 16px 16px 20px; }
+  .res-skill-row { grid-template-columns: 1fr; gap: 4px; }
+  .res-skill-cat { border-right: 0; padding-right: 0; border-bottom: 1px solid var(--line-soft); padding-bottom: 4px; margin-bottom: 4px; }
+  .res-skill-val { padding-left: 0; }
+}
 </style>
 </head>
 <body>
@@ -659,6 +837,7 @@ footer {
       <a href="#about"><span class="nav-icon">👤</span> About</a>
       <a href="#skills"><span class="nav-icon">⚙️</span> Skills</a>
       <a href="#projects"><span class="nav-icon">🗂</span> Dashboards</a>
+      <a href="#resume"><span class="nav-icon">📄</span> Resume</a>
       <a href="#experience"><span class="nav-icon">💼</span> Experience</a>
       <a href="#education"><span class="nav-icon">🎓</span> Education</a>
       <a href="#contact"><span class="nav-icon">✉️</span> Contact</a>
@@ -694,6 +873,7 @@ footer {
   <a href="#about">👤 About</a>
   <a href="#skills">⚙️ Skills</a>
   <a href="#projects">🗂 Dashboards</a>
+  <a href="#resume">📄 Resume</a>
   <a href="#experience">💼 Experience</a>
   <a href="#education">🎓 Education</a>
   <a href="#contact">✉️ Contact</a>
@@ -904,6 +1084,176 @@ footer {
         </div>
       </article>
     </div>
+  </section>
+
+  <!-- ====== RESUME ====== -->
+  <section id="resume">
+    <div class="eyebrow reveal">Full Profile</div>
+    <h2 class="title reveal">Resume</h2>
+    <p class="section-sub reveal">Complete professional profile — all details from my resume in one place.</p>
+
+    <div class="resume-page reveal">
+
+      <!-- Header -->
+      <div class="res-header">
+        <div>
+          <div class="res-name">Bhuvaneshwaran V</div>
+          <div class="res-title">DATA ANALYST &nbsp;|&nbsp; POWER BI DEVELOPER</div>
+          <div class="res-contacts">
+            <a class="res-contact-chip" href="tel:+918056601119">📞 +91-8056601119</a>
+            <a class="res-contact-chip" href="mailto:bhuvaneshvaranv@gmail.com">✉ bhuvaneshvaranv@gmail.com</a>
+            <a class="res-contact-chip" href="https://www.linkedin.com/in/bhuvaneshwaran-v" target="_blank" rel="noopener">in LinkedIn</a>
+            <a class="res-contact-chip" href="https://bhuvaneshvaranv-droid.github.io/Portfolio/" target="_blank" rel="noopener">⌥ Portfolio / GitHub</a>
+            <span class="res-contact-chip">📍 Chennai, Tamil Nadu</span>
+          </div>
+        </div>
+        <a class="res-download-btn" href="Bhuvaneshwaran_Resume.pdf" target="_blank" rel="noopener">
+          ↓ Download PDF
+        </a>
+      </div>
+
+      <!-- Body -->
+      <div class="res-body">
+
+        <!-- Professional Summary -->
+        <div>
+          <div class="res-sec-title">Professional Summary</div>
+          <p class="res-summary">
+            Results-driven <b>Data Analyst</b> and <b>Power BI Developer</b> with hands-on experience designing end-to-end analytics solutions — from raw data ingestion to executive-ready dashboards. Proficient in <b>Advanced DAX</b>, <b>Star Schema</b> data modeling, <b>Power Query ETL</b>, SQL, and Advanced Excel. Demonstrated ability to build scalable data models, automate reporting workflows, and translate complex datasets into <b>actionable business insights</b> that support data-driven decision-making across diverse industries.
+          </p>
+        </div>
+
+        <!-- Technical Skills -->
+        <div>
+          <div class="res-sec-title">Technical Skills</div>
+          <div class="res-skills-table">
+            <div class="res-skill-row">
+              <div class="res-skill-cat">BI &amp; Viz</div>
+              <div class="res-skill-val">Power BI Desktop &amp; Service, Dashboards, KPI Reports, Slicers, Drill-downs, Bookmarks, HTML KPI Cards</div>
+            </div>
+            <div class="res-skill-row">
+              <div class="res-skill-cat">Modeling</div>
+              <div class="res-skill-val">Star Schema, Fact &amp; Dimension Tables, DAX Measures, Calculated Columns, Time Intelligence (YOY, MOM, MTD, YTD)</div>
+            </div>
+            <div class="res-skill-row">
+              <div class="res-skill-cat">ETL &amp; Prep</div>
+              <div class="res-skill-val">Power Query (Excel &amp; Power BI), Data Cleaning, Transformation, Validation, Automated Reporting Workflows</div>
+            </div>
+            <div class="res-skill-row">
+              <div class="res-skill-cat">SQL</div>
+              <div class="res-skill-val">Joins, Subqueries, Aggregations, Filtering, Oracle SQL</div>
+            </div>
+            <div class="res-skill-row">
+              <div class="res-skill-cat">Excel</div>
+              <div class="res-skill-val">Advanced Functions, Pivot Tables, Power Query, Data Analysis</div>
+            </div>
+            <div class="res-skill-row">
+              <div class="res-skill-cat">Soft Skills</div>
+              <div class="res-skill-val">Requirement Gathering, Business Analysis, Analytical Thinking, Problem-Solving, Stakeholder Communication</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div>
+          <div class="res-sec-title">Projects</div>
+          <div class="res-project">
+            <div class="res-proj-top">
+              <div class="res-proj-name">Maruti Suzuki Automotive Sales Dashboard</div>
+              <div class="res-proj-date">2024 – 2026</div>
+            </div>
+            <div class="res-proj-sub">Portfolio Project — Power BI</div>
+            <div class="res-proj-tags">
+              <span class="res-proj-tag">Power BI Desktop</span>
+              <span class="res-proj-tag">Advanced DAX</span>
+              <span class="res-proj-tag">Star Schema</span>
+              <span class="res-proj-tag">Power Query</span>
+              <span class="res-proj-tag">Custom JSON Theme</span>
+              <span class="res-proj-tag">HTML KPI Cards</span>
+            </div>
+            <ul class="res-proj-list">
+              <li>Designed a comprehensive <b>dark-themed Power BI report</b> analyzing <b>20,000+ sales transactions</b> across models, regions, dealers, and customer segments (2020–2026).</li>
+              <li>Built a <b>star schema data model</b> with Sales and Customer fact tables connected to <b>6 dimension tables</b>, optimizing query performance and report accuracy.</li>
+              <li>Engineered <b>40+ DAX measures</b> including YOY, MOM (DATESBETWEEN + EDATE for slicer compatibility), MTD, YTD, Prior Year comparisons, and a dynamic Last Refresh indicator.</li>
+              <li>Designed <b>HTML Content KPI cards</b> in a horizontal 6-card executive overview layout with gradient styling using the Bird Finsight purple palette.</li>
+              <li>Implemented <b>multi-page navigation</b> for seamless flow across Overview, Model Analysis, Regional Performance, and Customer Insights pages.</li>
+              <li>Created a <b>bookmark-based show/hide slicer panel</b> using bookmarks and selection pane for a clean full-screen dashboard with dynamic filter reset.</li>
+              <li>Applied <b>drill-through navigation</b>, custom tooltip pages, a clickable car model gallery, and a custom JSON theme for consistent dark-mode branding.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Internship Experience -->
+        <div>
+          <div class="res-sec-title">Internship Experience</div>
+          <div class="res-exp">
+            <div class="res-exp-top">
+              <div class="res-exp-role">Data Analytics Intern</div>
+              <div class="res-exp-date">2023</div>
+            </div>
+            <div class="res-exp-co">ACSASS Company, Chennai</div>
+            <div class="res-exp-tags">
+              <span class="res-exp-tag">Power BI</span>
+              <span class="res-exp-tag">DAX</span>
+              <span class="res-exp-tag">Power Query</span>
+              <span class="res-exp-tag">SQL</span>
+              <span class="res-exp-tag">Excel</span>
+              <span class="res-exp-tag">Star Schema</span>
+            </div>
+            <ul class="res-exp-list">
+              <li>Built <b>interactive Power BI dashboards</b> featuring slicers, drill-downs, and KPI indicators to monitor key business metrics for stakeholders.</li>
+              <li>Designed and implemented <b>Star Schema data models</b> that improved report accuracy and query performance across multiple datasets.</li>
+              <li>Created <b>advanced DAX measures</b> and calculated columns for performance tracking, trend analysis, and comparative period-over-period reporting.</li>
+              <li>Performed end-to-end <b>ETL pipelines</b> — data extraction, cleaning, transformation, and validation — using Power Query and Excel.</li>
+              <li>Wrote <b>optimized SQL queries</b> including joins, subqueries, and aggregations to extract and analyze large datasets from relational databases.</li>
+              <li><b>Automated data preparation</b> and reporting workflows, significantly reducing manual effort and improving operational efficiency.</li>
+              <li>Applied <b>data visualization best practices</b> to deliver clear, stakeholder-ready reports translating raw data into actionable business insights.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div>
+          <div class="res-sec-title">Education</div>
+          <div class="res-edu-grid">
+            <div class="res-edu-card">
+              <div class="res-edu-degree">Master of Business Administration</div>
+              <div class="res-edu-spec">HR &amp; Finance</div>
+              <div class="res-edu-inst">Kongu Arts and Science College, Erode</div>
+              <div class="res-edu-meta">
+                <span class="res-edu-yr">2021 – 2023</span>
+                <span class="res-edu-score">72%</span>
+              </div>
+            </div>
+            <div class="res-edu-card">
+              <div class="res-edu-degree">Bachelor of Science</div>
+              <div class="res-edu-spec">Mathematics</div>
+              <div class="res-edu-inst">Bishop Heber College, Trichy</div>
+              <div class="res-edu-meta">
+                <span class="res-edu-yr">2019 – 2021</span>
+                <span class="res-edu-score">77%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div>
+          <div class="res-sec-title">Languages</div>
+          <div class="res-lang-row">
+            <div class="res-lang-chip">
+              <span class="lang-name">English</span>
+              <span class="lang-level">Professional Proficiency</span>
+            </div>
+            <div class="res-lang-chip">
+              <span class="lang-name">Tamil</span>
+              <span class="lang-level">Native</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /res-body -->
+    </div><!-- /resume-page -->
   </section>
 
   <!-- ====== EXPERIENCE ====== -->
