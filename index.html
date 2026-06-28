@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 <style>
 /* ============================================================
-   DESIGN TOKENS
+   DESIGN TOKENS  — Blue accent replacing amber
 ============================================================ */
 :root {
   --bg:          #060a10;
@@ -22,9 +22,9 @@
   --text:        #e8edf5;
   --muted:       #7d8fa8;
   --faint:       #4a5668;
-  --amber:       #f5c842;
-  --amber-soft:  #fad96a;
-  --amber-dim:   rgba(245,200,66,.12);
+  --amber:       #3b82f6;       /* blue-500 */
+  --amber-soft:  #60a5fa;       /* blue-400 */
+  --amber-dim:   rgba(59,130,246,.12);
   --teal:        #2dd4bf;
   --violet:      #a78bfa;
   --rose:        #fb7185;
@@ -66,7 +66,7 @@ body::after {
   content: "";
   position: fixed; top: -200px; right: -100px;
   width: 700px; height: 700px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(245,200,66,.045) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(59,130,246,.045) 0%, transparent 70%);
   pointer-events: none; z-index: 0;
 }
 
@@ -91,10 +91,10 @@ body::after {
 }
 .brand-mark {
   width: 38px; height: 38px; flex: none; border-radius: 10px;
-  background: linear-gradient(135deg, var(--amber), #e6b800);
-  display: grid; place-items: center; color: #13100a;
+  background: linear-gradient(135deg, var(--amber), #1d4ed8);
+  display: grid; place-items: center; color: #fff;
   font-family: "Space Grotesk"; font-weight: 700; font-size: 15px;
-  box-shadow: 0 0 0 1px rgba(245,200,66,.2), 0 8px 24px -8px rgba(245,200,66,.55);
+  box-shadow: 0 0 0 1px rgba(59,130,246,.2), 0 8px 24px -8px rgba(59,130,246,.55);
 }
 .brand-text { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
 .brand-name {
@@ -135,7 +135,7 @@ body::after {
 .nav a.active::before {
   content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
   width: 3px; height: 18px; background: var(--amber); border-radius: 0 3px 3px 0;
-  box-shadow: 0 0 8px rgba(245,200,66,.5);
+  box-shadow: 0 0 8px rgba(59,130,246,.5);
 }
 
 /* Rail socials */
@@ -162,7 +162,7 @@ body::after {
   color: var(--muted); cursor: pointer; transition: all .18s; text-decoration: none;
 }
 .social-btn:hover { transform: translateY(-2px); }
-.social-btn.email:hover { border-color: var(--amber); color: var(--amber); box-shadow: 0 4px 16px -6px rgba(245,200,66,.35); }
+.social-btn.email:hover { border-color: var(--amber); color: var(--amber); box-shadow: 0 4px 16px -6px rgba(59,130,246,.35); }
 .social-btn.wa:hover    { border-color: #25d366; color: #25d366; box-shadow: 0 4px 16px -6px rgba(37,211,102,.35); }
 .social-btn.li:hover    { border-color: #0a66c2; color: #0a66c2; box-shadow: 0 4px 16px -6px rgba(10,102,194,.35); }
 .social-btn.gh:hover    { border-color: #c9d1d9; color: #c9d1d9; box-shadow: 0 4px 16px -6px rgba(201,209,217,.25); }
@@ -230,8 +230,8 @@ h2.title {
   padding: 12px 22px; border-radius: 11px; font-size: 14px; font-weight: 600;
   transition: transform .16s, box-shadow .16s, background .16s, border-color .16s; cursor: pointer;
 }
-.btn-primary { background: linear-gradient(135deg, var(--amber), #e8b800); color: #14110a; border: none; }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 32px -12px rgba(245,200,66,.6); }
+.btn-primary { background: linear-gradient(135deg, var(--amber), #1d4ed8); color: #fff; border: none; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 32px -12px rgba(59,130,246,.6); }
 .btn-ghost { border: 1px solid var(--line); color: var(--muted); background: var(--surface); }
 .btn-ghost:hover { border-color: var(--amber); color: var(--amber); transform: translateY(-2px); background: var(--amber-dim); }
 
@@ -304,7 +304,7 @@ h2.title {
 .tag:hover { color: var(--amber); border-color: var(--amber); background: var(--amber-dim); transform: translateY(-2px); }
 
 /* ============================================================
-   PROJECTS / DASHBOARDS  (unchanged layout)
+   PROJECTS / DASHBOARDS
 ============================================================ */
 .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 34px; }
 .card {
@@ -350,7 +350,7 @@ h2.title {
   content: ""; position: absolute; left: -26px; top: 5px;
   width: 12px; height: 12px; border-radius: 50%;
   background: var(--bg); border: 2px solid var(--amber);
-  box-shadow: 0 0 10px rgba(245,200,66,.4);
+  box-shadow: 0 0 10px rgba(59,130,246,.4);
 }
 .tl-badge {
   display: inline-flex; align-items: center; gap: 7px;
@@ -380,11 +380,11 @@ h2.title {
   position: relative; overflow: hidden;
   transition: border-color .2s, transform .2s;
 }
-.edu:hover { border-color: var(--amber); transform: translateY(-3px); box-shadow: 0 12px 32px -14px rgba(245,200,66,.2); }
+.edu:hover { border-color: var(--amber); transform: translateY(-3px); box-shadow: 0 12px 32px -14px rgba(59,130,246,.2); }
 .edu::before {
   content: ""; position: absolute; bottom: 0; right: 0;
   width: 80px; height: 80px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(245,200,66,.06), transparent);
+  background: radial-gradient(circle, rgba(59,130,246,.06), transparent);
 }
 .edu-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
 .edu h4 { font-family: "Space Grotesk"; font-weight: 600; font-size: 16px; }
@@ -408,7 +408,7 @@ h2.title {
 .contact-glow {
   position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
   width: 500px; height: 300px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(245,200,66,.06), transparent); pointer-events: none;
+  background: radial-gradient(circle, rgba(59,130,246,.06), transparent); pointer-events: none;
 }
 .contact-wrap h2 {
   font-family: "Space Grotesk"; font-weight: 600;
@@ -427,7 +427,7 @@ h2.title {
   transition: border-color .2s, color .2s, transform .2s, box-shadow .2s;
 }
 .contact-link:hover { transform: translateY(-4px); }
-.contact-link.email:hover { border-color: var(--amber); color: var(--amber); box-shadow: 0 10px 30px -12px rgba(245,200,66,.4); }
+.contact-link.email:hover { border-color: var(--amber); color: var(--amber); box-shadow: 0 10px 30px -12px rgba(59,130,246,.4); }
 .contact-link.wa:hover    { border-color: #25d366; color: #25d366; box-shadow: 0 10px 30px -12px rgba(37,211,102,.35); }
 .contact-link.li:hover    { border-color: #0a66c2; color: #0a66c2; box-shadow: 0 10px 30px -12px rgba(10,102,194,.35); }
 .contact-link.gh:hover    { border-color: #c9d1d9; color: #c9d1d9; box-shadow: 0 10px 30px -12px rgba(201,209,217,.25); }
@@ -448,12 +448,12 @@ h2.title {
   transform: translateY(-2px); box-shadow: 0 10px 30px -12px rgba(167,139,250,.35);
 }
 .resume-btn-view {
-  background: linear-gradient(135deg, var(--amber), #e8b800);
-  color: #14110a; border-color: transparent; font-weight: 600;
+  background: linear-gradient(135deg, var(--amber), #1d4ed8);
+  color: #fff; border-color: transparent; font-weight: 600;
 }
 .resume-btn-view:hover {
-  border-color: transparent; color: #14110a;
-  box-shadow: 0 10px 30px -12px rgba(245,200,66,.5);
+  border-color: transparent; color: #fff;
+  box-shadow: 0 10px 30px -12px rgba(59,130,246,.5);
 }
 
 /* ============================================================
@@ -506,16 +506,16 @@ footer {
 .slide-wrap img.slide { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .45s ease; pointer-events:none; }
 .slide-wrap img.slide.active { opacity:1; }
 .slide-arrow { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,.6); border:1px solid rgba(255,255,255,.1); color:#fff; border-radius:50%; width:30px; height:30px; display:flex; align-items:center; justify-content:center; font-size:18px; cursor:pointer; z-index:5; line-height:1; transition:background .18s; user-select:none; }
-.slide-arrow:hover { background:rgba(245,200,66,.7); color:#13100a; }
+.slide-arrow:hover { background:rgba(59,130,246,.7); color:#fff; }
 .slide-arrow.prev { left:8px; } .slide-arrow.next { right:8px; }
 .slide-dots { position:absolute; bottom:8px; left:50%; transform:translateX(-50%); display:flex; gap:5px; z-index:5; }
 .slide-dot { width:5px; height:5px; border-radius:50%; background:rgba(255,255,255,.25); cursor:pointer; transition:background .18s,transform .18s; }
 .slide-dot.active { background:var(--amber); transform:scale(1.4); }
 .slide-hint { position:absolute; top:8px; right:8px; background:rgba(0,0,0,.6); border:1px solid rgba(255,255,255,.1); color:var(--muted); font-family:"JetBrains Mono"; font-size:10px; padding:3px 8px; border-radius:6px; z-index:5; pointer-events:none; }
-.card-video-strip { display:flex; align-items:center; gap:10px; padding:11px 16px; background:linear-gradient(90deg,rgba(245,200,66,.09),rgba(245,200,66,.03)); border-top:1px solid rgba(245,200,66,.18); border-bottom:1px solid var(--line); cursor:pointer; transition:background .18s; }
-.card-video-strip:hover { background:linear-gradient(90deg,rgba(245,200,66,.17),rgba(245,200,66,.07)); }
-.vid-play-btn { width:34px; height:34px; flex:none; background:var(--amber); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#13100a; font-size:12px; box-shadow:0 0 14px rgba(245,200,66,.4); transition:transform .18s,box-shadow .18s; }
-.card-video-strip:hover .vid-play-btn { transform:scale(1.12); box-shadow:0 0 22px rgba(245,200,66,.65); }
+.card-video-strip { display:flex; align-items:center; gap:10px; padding:11px 16px; background:linear-gradient(90deg,rgba(59,130,246,.09),rgba(59,130,246,.03)); border-top:1px solid rgba(59,130,246,.18); border-bottom:1px solid var(--line); cursor:pointer; transition:background .18s; }
+.card-video-strip:hover { background:linear-gradient(90deg,rgba(59,130,246,.17),rgba(59,130,246,.07)); }
+.vid-play-btn { width:34px; height:34px; flex:none; background:var(--amber); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:12px; box-shadow:0 0 14px rgba(59,130,246,.4); transition:transform .18s,box-shadow .18s; }
+.card-video-strip:hover .vid-play-btn { transform:scale(1.12); box-shadow:0 0 22px rgba(59,130,246,.65); }
 .vid-label { font-family:"JetBrains Mono"; font-size:11.5px; color:var(--amber); font-weight:600; }
 .vid-sublabel { font-family:"JetBrains Mono"; font-size:10px; color:var(--faint); margin-top:2px; }
 .vid-arrow { margin-left:auto; color:var(--faint); font-size:14px; transition:transform .18s; }
@@ -530,128 +530,20 @@ footer {
 .fs-close { position:fixed; top:18px; right:22px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); color:#fff; border-radius:50%; width:38px; height:38px; display:flex; align-items:center; justify-content:center; font-size:18px; cursor:pointer; z-index:1001; transition:background .18s; }
 .fs-close:hover { background:rgba(255,255,255,.22); }
 .fs-nav { position:fixed; top:50%; transform:translateY(-50%); background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); color:#fff; border-radius:50%; width:44px; height:44px; display:flex; align-items:center; justify-content:center; font-size:20px; cursor:pointer; z-index:1001; transition:background .18s; }
-.fs-nav:hover { background:rgba(245,200,66,.35); }
+.fs-nav:hover { background:rgba(59,130,246,.35); }
 .fs-nav.prev { left:18px; } .fs-nav.next { right:18px; }
 .fs-counter { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); font-family:"JetBrains Mono"; font-size:11px; color:rgba(255,255,255,.45); background:rgba(0,0,0,.4); padding:4px 12px; border-radius:99px; }
+
 /* Video modal */
 .video-modal { display:none; position:fixed; inset:0; z-index:1100; background:rgba(0,0,0,.97); align-items:center; justify-content:center; }
 .video-modal.open { display:flex; animation:fdIn .2s ease; }
 .video-inner { position:relative; width:min(900px,94vw); }
 .video-inner video { width:100%; border-radius:10px; box-shadow:0 30px 80px rgba(0,0,0,.9); display:block; }
+.video-inner iframe { width:100%; aspect-ratio:16/9; border:0; border-radius:10px; box-shadow:0 30px 80px rgba(0,0,0,.9); display:block; }
 .vm-close { position:absolute; top:-14px; right:-14px; background:var(--surface-2); border:1px solid var(--line); color:var(--text); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size:16px; cursor:pointer; z-index:10; transition:background .18s,border-color .18s; }
-.vm-close:hover { background:var(--amber); color:#14110a; border-color:var(--amber); }
+.vm-close:hover { background:var(--amber); color:#fff; border-color:var(--amber); }
 .vm-label { font-family:"JetBrains Mono"; font-size:10.5px; color:var(--faint); text-align:center; margin-top:12px; letter-spacing:1px; }
 
-/* ============================================================
-   REDUCED MOTION
-============================================================ */
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-  .reveal { opacity: 1; transform: none; }
-  .bar > i { transition: none; }
-}
-
-/* ============================================================
-   RESPONSIVE — TABLET LANDSCAPE / SMALL LAPTOP  (≤1024px)
-   Keeps the rail but narrows it; stacks some grids
-============================================================ */
-@media (max-width: 1024px) {
-  :root { --rail-w: 200px; }
-  .brand-name { font-size: 12.5px; }
-  .about-grid { grid-template-columns: 1fr; gap: 28px; }
-  .kpi-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-}
-
-/* ============================================================
-   RESPONSIVE — TABLET PORTRAIT (≤768px)
-   Rail hidden; topbar shown; single-column layouts
-============================================================ */
-@media (max-width: 768px) {
-  :root { --rail-w: 0px; }
-  .rail { display: none; }
-  .main, footer { margin-left: 0; }
-  .topbar { display: flex; }
-
-  .main { padding: 0 clamp(16px, 5vw, 32px); }
-  section { padding: 52px 0; }
-
-  .hero { padding-top: 52px; }
-  .hero h1 { letter-spacing: -1.2px; }
-  .hero-lead { max-width: 100%; }
-
-  .kpi-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-  .about-grid { grid-template-columns: 1fr; gap: 24px; }
-  .skills-grid { grid-template-columns: 1fr; gap: 10px; }
-  .proj-grid { grid-template-columns: 1fr; gap: 16px; }
-  .edu-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .contact-links { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-
-  .report-bar { gap: 8px; }
-  .report-bar .chip { font-size: 10px; padding: 4px 10px; }
-}
-
-/* ============================================================
-   RESPONSIVE — MOBILE LARGE  (≤600px)
-============================================================ */
-@media (max-width: 600px) {
-  .edu-grid { grid-template-columns: 1fr; }
-  .kpi-grid { grid-template-columns: 1fr; gap: 10px; }
-  .cta-row { flex-direction: column; }
-  .btn { width: 100%; justify-content: center; }
-  h2.title { font-size: clamp(22px, 6vw, 30px); }
-  .contact-links { grid-template-columns: repeat(2, 1fr); }
-}
-
-/* ============================================================
-   RESPONSIVE — MOBILE SMALL  (≤400px)
-   Handles tiny Android / iPhone SE screens
-============================================================ */
-@media (max-width: 400px) {
-  .main { padding: 0 14px; }
-  section { padding: 42px 0; }
-  .hero { padding-top: 40px; }
-  .report-bar .chip { font-size: 9.5px; padding: 4px 8px; }
-  .hero h1 { font-size: clamp(30px, 9vw, 38px); letter-spacing: -1px; }
-  .hero-lead { font-size: 14px; }
-  .contact-wrap { padding: 22px 16px; border-radius: 14px; }
-  .contact-links { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .contact-link { padding: 14px 8px; border-radius: 12px; gap: 6px; }
-  .contact-label { font-size: 12px; }
-  .contact-sub { display: none; }
-  .slide-wrap { height: 175px; }
-}
-
-/* ============================================================
-   RESPONSIVE — LARGE DESKTOP / MAC  (≥1440px)
-   Wider spacing, larger type
-============================================================ */
-@media (min-width: 1440px) {
-  :root { --rail-w: 260px; }
-  .main { padding: 0 72px; }
-  section { padding: 84px 0; }
-  .hero { padding-top: 84px; }
-  .kpi-grid { gap: 18px; }
-  .proj-grid { gap: 22px; }
-  .skills-grid { gap: 18px 56px; }
-  .about-grid { gap: 48px; }
-  .edu-grid { gap: 18px; }
-  .about-text p { font-size: 16px; }
-  .tl-list li { font-size: 14.5px; }
-}
-
-/* ============================================================
-   RESPONSIVE — ULTRA-WIDE / 4K  (≥1920px)
-============================================================ */
-@media (min-width: 1920px) {
-  :root { --rail-w: 280px; }
-  html { font-size: 17px; }
-  .main { max-width: calc(var(--rail-w) + 1200px); padding: 0 80px; }
-  section { padding: 96px 0; }
-  .hero { padding-top: 96px; }
-  .nav a { font-size: 14px; padding: 11px 12px; }
-  .brand-name { font-size: 15px; }
-  .brand-role { font-size: 10.5px; }
-}
 /* ============================================================
    RESUME SECTION
 ============================================================ */
@@ -664,8 +556,6 @@ footer {
   content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
   background: linear-gradient(90deg, transparent, var(--amber), transparent);
 }
-
-/* Resume header strip */
 .res-header {
   background: linear-gradient(135deg, #0c1220, #0a0f18);
   border-bottom: 1px solid var(--line);
@@ -686,18 +576,14 @@ footer {
 .res-contact-chip:hover { border-color: var(--amber); color: var(--amber); }
 .res-download-btn {
   display: inline-flex; align-items: center; gap: 8px;
-  background: linear-gradient(135deg, var(--amber), #e8b800);
-  color: #14110a; border: none; border-radius: 10px;
+  background: linear-gradient(135deg, var(--amber), #1d4ed8);
+  color: #fff; border: none; border-radius: 10px;
   padding: 11px 20px; font-family: "Space Grotesk"; font-weight: 600; font-size: 13.5px;
   cursor: pointer; text-decoration: none; flex-shrink: 0; align-self: flex-start;
   transition: transform .16s, box-shadow .16s;
 }
-.res-download-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -10px rgba(245,200,66,.6); }
-
-/* Resume body */
+.res-download-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -10px rgba(59,130,246,.6); }
 .res-body { padding: 28px 32px 32px; display: flex; flex-direction: column; gap: 28px; }
-
-/* Section heading inside resume */
 .res-sec-title {
   font-family: "JetBrains Mono"; font-size: 10px; letter-spacing: 2.5px;
   text-transform: uppercase; color: var(--amber);
@@ -705,14 +591,8 @@ footer {
   padding-bottom: 10px; border-bottom: 1px solid var(--line-soft);
 }
 .res-sec-title::before { content: ""; width: 16px; height: 1px; background: var(--amber); }
-
-/* Summary */
-.res-summary {
-  color: var(--muted); font-size: 14.5px; line-height: 1.78;
-}
+.res-summary { color: var(--muted); font-size: 14.5px; line-height: 1.78; }
 .res-summary b { color: var(--text); font-weight: 500; }
-
-/* Skills table */
 .res-skills-table { display: flex; flex-direction: column; gap: 0; }
 .res-skill-row {
   display: grid; grid-template-columns: 110px 1fr;
@@ -725,11 +605,7 @@ footer {
   font-weight: 600; letter-spacing: .5px; padding-right: 14px; padding-top: 1px;
   border-right: 1px solid var(--line-soft);
 }
-.res-skill-val {
-  color: var(--muted); font-size: 13.5px; line-height: 1.6; padding-left: 16px;
-}
-
-/* Project card in resume */
+.res-skill-val { color: var(--muted); font-size: 13.5px; line-height: 1.6; padding-left: 16px; }
 .res-project {
   background: var(--surface-2); border: 1px solid var(--line);
   border-radius: 12px; padding: 20px 22px; position: relative; overflow: hidden;
@@ -758,8 +634,6 @@ footer {
   width: 5px; height: 5px; border-radius: 50%; background: var(--amber); opacity: .7;
 }
 .res-proj-list li b { color: var(--text); font-weight: 500; }
-
-/* Experience in resume */
 .res-exp {
   background: var(--surface-2); border: 1px solid var(--line);
   border-radius: 12px; padding: 20px 22px; position: relative; overflow: hidden;
@@ -788,8 +662,6 @@ footer {
   width: 5px; height: 5px; border-radius: 50%; background: var(--teal); opacity: .7;
 }
 .res-exp-list li b { color: var(--text); font-weight: 500; }
-
-/* Education in resume */
 .res-edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .res-edu-card {
   background: var(--surface-2); border: 1px solid var(--line);
@@ -805,8 +677,6 @@ footer {
 .res-edu-meta { display: flex; justify-content: space-between; margin-top: 8px; }
 .res-edu-yr { font-family: "JetBrains Mono"; font-size: 10.5px; color: var(--faint); }
 .res-edu-score { font-family: "Space Grotesk"; font-weight: 700; font-size: 18px; color: var(--amber); }
-
-/* Languages row */
 .res-lang-row { display: flex; gap: 12px; flex-wrap: wrap; }
 .res-lang-chip {
   display: inline-flex; align-items: center; gap: 8px;
@@ -816,12 +686,54 @@ footer {
 .res-lang-chip .lang-name { font-family: "Space Grotesk"; font-weight: 600; }
 .res-lang-chip .lang-level { font-family: "JetBrains Mono"; font-size: 10.5px; color: var(--muted); }
 
-/* Responsive resume */
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+  .bar > i { transition: none; }
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 1024px) {
+  :root { --rail-w: 200px; }
+  .brand-name { font-size: 12.5px; }
+  .about-grid { grid-template-columns: 1fr; gap: 28px; }
+  .kpi-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+}
 @media (max-width: 768px) {
+  :root { --rail-w: 0px; }
+  .rail { display: none; }
+  .main, footer { margin-left: 0; }
+  .topbar { display: flex; }
+  .main { padding: 0 clamp(16px, 5vw, 32px); }
+  section { padding: 52px 0; }
+  .hero { padding-top: 52px; }
+  .hero h1 { letter-spacing: -1.2px; }
+  .hero-lead { max-width: 100%; }
+  .kpi-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .about-grid { grid-template-columns: 1fr; gap: 24px; }
+  .skills-grid { grid-template-columns: 1fr; gap: 10px; }
+  .proj-grid { grid-template-columns: 1fr; gap: 16px; }
+  .edu-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .contact-links { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .report-bar { gap: 8px; }
+  .report-bar .chip { font-size: 10px; padding: 4px 10px; }
   .res-header { padding: 22px 20px 18px; }
   .res-body { padding: 20px 20px 24px; }
   .res-skill-row { grid-template-columns: 90px 1fr; }
   .res-edu-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .edu-grid { grid-template-columns: 1fr; }
+  .kpi-grid { grid-template-columns: 1fr; gap: 10px; }
+  .cta-row { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
+  h2.title { font-size: clamp(22px, 6vw, 30px); }
+  .contact-links { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 500px) {
   .res-header { padding: 18px 16px; }
@@ -829,6 +741,43 @@ footer {
   .res-skill-row { grid-template-columns: 1fr; gap: 4px; }
   .res-skill-cat { border-right: 0; padding-right: 0; border-bottom: 1px solid var(--line-soft); padding-bottom: 4px; margin-bottom: 4px; }
   .res-skill-val { padding-left: 0; }
+}
+@media (max-width: 400px) {
+  .main { padding: 0 14px; }
+  section { padding: 42px 0; }
+  .hero { padding-top: 40px; }
+  .report-bar .chip { font-size: 9.5px; padding: 4px 8px; }
+  .hero h1 { font-size: clamp(30px, 9vw, 38px); letter-spacing: -1px; }
+  .hero-lead { font-size: 14px; }
+  .contact-wrap { padding: 22px 16px; border-radius: 14px; }
+  .contact-links { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .contact-link { padding: 14px 8px; border-radius: 12px; gap: 6px; }
+  .contact-label { font-size: 12px; }
+  .contact-sub { display: none; }
+  .slide-wrap { height: 175px; }
+}
+@media (min-width: 1440px) {
+  :root { --rail-w: 260px; }
+  .main { padding: 0 72px; }
+  section { padding: 84px 0; }
+  .hero { padding-top: 84px; }
+  .kpi-grid { gap: 18px; }
+  .proj-grid { gap: 22px; }
+  .skills-grid { gap: 18px 56px; }
+  .about-grid { gap: 48px; }
+  .edu-grid { gap: 18px; }
+  .about-text p { font-size: 16px; }
+  .tl-list li { font-size: 14.5px; }
+}
+@media (min-width: 1920px) {
+  :root { --rail-w: 280px; }
+  html { font-size: 17px; }
+  .main { max-width: calc(var(--rail-w) + 1200px); padding: 0 80px; }
+  section { padding: 96px 0; }
+  .hero { padding-top: 96px; }
+  .nav a { font-size: 14px; padding: 11px 12px; }
+  .brand-name { font-size: 15px; }
+  .brand-role { font-size: 10.5px; }
 }
 </style>
 </head>
@@ -843,7 +792,6 @@ footer {
       <div class="brand-role">Data Analyst</div>
     </div>
   </div>
-
   <div class="rail-nav-wrap">
     <div class="rail-label">Report Pages</div>
     <nav class="nav" id="railNav">
@@ -856,14 +804,13 @@ footer {
       <a href="#contact"><span class="nav-icon">✉️</span> Contact</a>
     </nav>
   </div>
-
   <div class="rail-socials">
     <div class="rail-status"><span class="pulse"></span> Open to work</div>
     <div class="social-links">
-      <a class="social-btn email" href="mailto:bhuvaneshvaranv@gmail.com" title="Email Bhuvaneshwaran">✉</a>
+      <a class="social-btn email" href="mailto:bhuvaneshvaranv@gmail.com" title="Email">✉</a>
       <a class="social-btn wa" href="https://wa.me/918056601119?text=Hi%20Bhuvaneshwaran%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect!" target="_blank" rel="noopener" title="WhatsApp">💬</a>
       <a class="social-btn li" href="https://www.linkedin.com/in/bhuvaneshwaran-v" target="_blank" rel="noopener" title="LinkedIn" style="font-family:'Space Grotesk';font-weight:700;color:#0a66c2;font-size:13px;">in</a>
-      <a class="social-btn gh" href="https://bhuvaneshvaranv-droid.github.io/Portfolio/" target="_blank" rel="noopener" title="GitHub Portfolio">
+      <a class="social-btn gh" href="https://bhuvaneshvaranv-droid.github.io/Portfolio/" target="_blank" rel="noopener" title="GitHub">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.167 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
       </a>
     </div>
@@ -975,19 +922,20 @@ footer {
     </div>
   </section>
 
-  <!-- ====== DASHBOARDS (UNCHANGED) ====== -->
+  <!-- ====== DASHBOARDS ====== -->
   <section id="projects">
     <div class="eyebrow reveal">Selected work</div>
     <h2 class="title reveal">Dashboards &amp; reports</h2>
-    <p class="section-sub reveal">Work from my Data Analytics internship. Swap these mini-charts for screenshots of your own .pbix reports to make them shine.</p>
+    <p class="section-sub reveal">Work from my Data Analytics internship — interactive Power BI dashboards across Finance, Automotive, Food Delivery, and SQL Performance domains.</p>
 
     <div class="proj-grid">
+
       <!-- Card 1: Bird Finance Dashboard -->
       <article class="card reveal">
         <div class="slide-wrap" id="finSlideWrap" title="Click image to expand">
-          <img class="slide active" id="finSlide0" src="finSlide0.png" alt="Finance Dashboard Screenshot 1" />
-          <img class="slide" id="finSlide1" src="finSlide1.png" alt="Finance Dashboard Screenshot 2" />
-          <img class="slide" id="finSlide2" src="finSlide2.png" alt="Finance Dashboard Screenshot 3" />
+          <img class="slide active" src="finSlide0.png" alt="Finance Dashboard Screenshot 1" />
+          <img class="slide" src="finSlide1.png" alt="Finance Dashboard Screenshot 2" />
+          <img class="slide" src="finSlide2.png" alt="Finance Dashboard Screenshot 3" />
           <button class="slide-arrow prev" id="finPrev" aria-label="Previous slide">&#8249;</button>
           <button class="slide-arrow next" id="finNext" aria-label="Next slide">&#8250;</button>
           <div class="slide-dots" id="finDots">
@@ -1018,12 +966,12 @@ footer {
       <!-- Card 2: Maruti Suzuki Sales Dashboard -->
       <article class="card reveal">
         <div class="slide-wrap" id="marutiSlideWrap" title="Click image to expand">
-          <img class="slide active" id="marutiSlide0" src="marutiSlide0.png" alt="Maruti Suzuki Sales Dashboard Screenshot 1" />
-          <img class="slide" id="marutiSlide1" src="marutiSlide1.png" alt="Maruti Suzuki Sales Dashboard Screenshot 2" />
-          <img class="slide" id="marutiSlide2" src="marutiSlide2.png" alt="Maruti Suzuki Sales Dashboard Screenshot 3" />
-          <img class="slide" id="marutiSlide3" src="marutiSlide3.png" alt="Maruti Suzuki Sales Dashboard Screenshot 4" />
-          <img class="slide" id="marutiSlide4" src="marutiSlide4.png" alt="Maruti Suzuki Sales Dashboard Screenshot 5" />
-          <img class="slide" id="marutiSlide5" src="marutiSlide5.png" alt="Maruti Suzuki Sales Dashboard Screenshot 6" />
+          <img class="slide active" src="marutiSlide0.png" alt="Maruti Suzuki Sales Dashboard Screenshot 1" />
+          <img class="slide" src="marutiSlide1.png" alt="Maruti Suzuki Sales Dashboard Screenshot 2" />
+          <img class="slide" src="marutiSlide2.png" alt="Maruti Suzuki Sales Dashboard Screenshot 3" />
+          <img class="slide" src="marutiSlide3.png" alt="Maruti Suzuki Sales Dashboard Screenshot 4" />
+          <img class="slide" src="marutiSlide4.png" alt="Maruti Suzuki Sales Dashboard Screenshot 5" />
+          <img class="slide" src="marutiSlide5.png" alt="Maruti Suzuki Sales Dashboard Screenshot 6" />
           <button class="slide-arrow prev" id="marutiPrev" aria-label="Previous slide">&#8249;</button>
           <button class="slide-arrow next" id="marutiNext" aria-label="Next slide">&#8250;</button>
           <div class="slide-dots" id="marutiDots">
@@ -1072,29 +1020,43 @@ footer {
         </div>
       </article>
 
-      <!-- Card 4 -->
+      <!-- Card 4: SQL Query Analytics Dashboard -->
       <article class="card reveal">
-        <div class="card-viz">
-          <div class="viz-head"><span>ETL Pipeline</span><span>Power Query</span></div>
-          <svg viewBox="0 0 300 96" aria-hidden="true">
-            <g font-family="JetBrains Mono" font-size="9" font-weight="700">
-              <rect x="10" y="36" width="58" height="24" rx="5" fill="#141b28" stroke="#fb7185" stroke-width="1.5"/>
-              <text x="39" y="51" text-anchor="middle" fill="#fb7185">EXTRACT</text>
-              <rect x="92" y="36" width="64" height="24" rx="5" fill="#141b28" stroke="#f5c842" stroke-width="1.5"/>
-              <text x="124" y="51" text-anchor="middle" fill="#f5c842">CLEAN</text>
-              <rect x="180" y="36" width="110" height="24" rx="5" fill="#141b28" stroke="#2dd4bf" stroke-width="1.5"/>
-              <text x="235" y="51" text-anchor="middle" fill="#2dd4bf">TRANSFORM ▸ LOAD</text>
-            </g>
-            <g stroke="#4a5668" stroke-width="1.5"><line x1="68" y1="48" x2="92" y2="48"/><line x1="156" y1="48" x2="180" y2="48"/></g>
-          </svg>
+        <div class="slide-wrap" id="sqlSlideWrap" title="Click image to expand">
+          <img class="slide active" src="sqlSlide0.png" alt="SQL Query Analytics Dashboard — Overview" />
+          <img class="slide" src="sqlSlide1.png" alt="SQL Query Analytics Dashboard — Total Hours" />
+          <img class="slide" src="sqlSlide2.png" alt="SQL Query Analytics Dashboard — Detailed Report" />
+          <img class="slide" src="sqlSlide3.png" alt="SQL Query Analytics Dashboard — Tooltip" />
+          <button class="slide-arrow prev" id="sqlPrev" aria-label="Previous slide">&#8249;</button>
+          <button class="slide-arrow next" id="sqlNext" aria-label="Next slide">&#8250;</button>
+          <div class="slide-dots" id="sqlDots">
+            <div class="slide-dot active" data-idx="0"></div>
+            <div class="slide-dot" data-idx="1"></div>
+            <div class="slide-dot" data-idx="2"></div>
+            <div class="slide-dot" data-idx="3"></div>
+          </div>
+          <div class="slide-hint">&#128269; Click to expand</div>
+        </div>
+        <div class="card-video-strip" id="sqlVideoBtn" role="button" tabindex="0" aria-label="Watch SQL Query Analytics Dashboard demo video">
+          <div class="vid-play-btn">&#9654;</div>
+          <div>
+            <div class="vid-label">Watch Dashboard Demo</div>
+            <div class="vid-sublabel">Manju_Index_AI · Full walkthrough</div>
+          </div>
+          <div class="vid-arrow">&#8594;</div>
         </div>
         <div class="card-body">
-          <h3>Automated ETL &amp; Reporting</h3>
-          <p>End-to-end ETL — extraction, cleaning, transformation, and validation in Power Query and Excel — with automated data-prep and reporting workflows.</p>
-          <div class="card-out">&#9642; Streamlined reporting, less manual work</div>
-          <div class="card-tags"><span>Power Query</span><span>Excel</span><span>SQL</span><span>Validation</span></div>
+          <h3>SQL Query Analytics Dashboard</h3>
+          <p>A 4-page Power BI report analyzing 3,503 SQL queries across Hospital, Pharmacy, and Finance databases — tracking duration bands, slow query %, index performance, and hourly trends with a custom HTML tooltip page.</p>
+          <div class="card-out">&#9642; Custom HTML tooltip with live DAX · Duration band split bar · Last Refresh timestamp · Conditional formatting matrix</div>
+          <div class="card-tags">
+            <span>Power BI</span><span>Advanced DAX</span><span>HTML Content Visual</span>
+            <span>Custom Tooltip</span><span>SQL Analytics</span><span>Bookmarks</span>
+            <span>Conditional Formatting</span><span>Matrix Drill-through</span>
+          </div>
         </div>
       </article>
+
     </div>
   </section>
 
@@ -1182,7 +1144,7 @@ footer {
   Designed &amp; built by Bhuvaneshwaran V &nbsp;·&nbsp; Data Analyst &amp; Power BI Developer
 </footer>
 
-<!-- Fullscreen viewer -->
+<!-- ====== FULLSCREEN LIGHTBOX ====== -->
 <div class="fs-overlay" id="fsOverlay" role="dialog" aria-modal="true">
   <button class="fs-close" id="fsClose">&#10005;</button>
   <button class="fs-nav prev" id="fsPrev">&#8249;</button>
@@ -1191,7 +1153,7 @@ footer {
   <div class="fs-counter" id="fsCounter">1 / 3</div>
 </div>
 
-<!-- Video modal -->
+<!-- ====== FINANCE VIDEO MODAL ====== -->
 <div class="video-modal" id="videoModal" role="dialog" aria-modal="true">
   <div class="video-inner">
     <button class="vm-close" id="vmClose">&#10005;</button>
@@ -1203,8 +1165,34 @@ footer {
   </div>
 </div>
 
+<!-- ====== MARUTI VIDEO MODAL ====== -->
+<div class="video-modal" id="marutiVideoModal" role="dialog" aria-modal="true">
+  <div class="video-inner">
+    <button class="vm-close" id="marutiVmClose">&#10005;</button>
+    <video id="marutiVideo" controls preload="none" poster="marutiPoster.png">
+      <source src="Maruti_LN.mp4" type="video/mp4" />
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="vm-label">Maruti Suzuki Sales Dashboard Demo</div>
+  </div>
+</div>
+
+<!-- ====== SQL QUERY ANALYTICS VIDEO MODAL (Google Drive) ====== -->
+<div class="video-modal" id="sqlVideoModal" role="dialog" aria-modal="true">
+  <div class="video-inner">
+    <button class="vm-close" id="sqlVmClose">&#10005;</button>
+    <iframe
+      id="sqlVideoFrame"
+      src=""
+      allow="autoplay; fullscreen"
+      allowfullscreen>
+    </iframe>
+    <div class="vm-label">SQL Query Analytics Dashboard — Full Walkthrough</div>
+  </div>
+</div>
+
 <script>
-/* Mobile menu */
+/* ── Mobile menu ── */
 document.getElementById('menuBtn').addEventListener('click', () =>
   document.getElementById('mobileNav').classList.toggle('open'));
 document.getElementById('mobileNav').querySelectorAll('a').forEach(a =>
@@ -1212,7 +1200,7 @@ document.getElementById('mobileNav').querySelectorAll('a').forEach(a =>
 
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* Reveal on scroll */
+/* ── Reveal on scroll ── */
 const revealEls = document.querySelectorAll('.reveal');
 if (reduce) {
   revealEls.forEach(el => el.classList.add('in'));
@@ -1223,7 +1211,7 @@ if (reduce) {
   revealEls.forEach(el => io.observe(el));
 }
 
-/* KPI counter */
+/* ── KPI counter ── */
 function animateCount(el) {
   const target = parseFloat(el.dataset.count), suffix = el.dataset.suffix || '';
   if (reduce) { el.innerHTML = target + (suffix ? '<span class="u">'+suffix+'</span>' : ''); return; }
@@ -1241,13 +1229,13 @@ const kpiIO = new IntersectionObserver(entries => {
 }, { threshold: 0.5 });
 document.querySelectorAll('.k-val[data-count]').forEach(el => kpiIO.observe(el));
 
-/* Skill bars */
+/* ── Skill bars ── */
 const barIO = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.style.width = e.target.dataset.w + '%'; barIO.unobserve(e.target); } });
 }, { threshold: 0.4 });
 document.querySelectorAll('.bar > i').forEach(el => barIO.observe(el));
 
-/* Active nav */
+/* ── Active nav ── */
 const sections = document.querySelectorAll('main section');
 const navLinks = document.querySelectorAll('#railNav a');
 const navIO2 = new IntersectionObserver(entries => {
@@ -1258,7 +1246,7 @@ const navIO2 = new IntersectionObserver(entries => {
 }, { rootMargin: '-45% 0px -50% 0px' });
 sections.forEach(s => navIO2.observe(s));
 
-/* Slideshow + Lightbox */
+/* ── Slideshow + Lightbox ── */
 (function(){
   document.querySelectorAll('.slide-wrap').forEach(function(wrap){
     var slides = Array.from(wrap.querySelectorAll('.slide'));
@@ -1266,21 +1254,16 @@ sections.forEach(s => navIO2.observe(s));
     var prevBtn = wrap.querySelector('.slide-arrow.prev');
     var nextBtn = wrap.querySelector('.slide-arrow.next');
     var current = 0, timer;
-
     function goTo(n) {
-      if(slides.length <= 1) return; /* single image — nothing to rotate */
+      if(slides.length <= 1) return;
       slides[current].classList.remove('active');
       if(dots[current]) dots[current].classList.remove('active');
       current = (n + slides.length) % slides.length;
       slides[current].classList.add('active');
       if(dots[current]) dots[current].classList.add('active');
     }
-    function start() {
-      if(slides.length <= 1) return; /* no timer needed for single image */
-      timer = setInterval(function(){ goTo(current+1); }, 3500);
-    }
-    function stop() { clearInterval(timer); }
-
+    function start() { if(slides.length <= 1) return; timer = setInterval(function(){ goTo(current+1); }, 3500); }
+    function stop()  { clearInterval(timer); }
     if(prevBtn) prevBtn.addEventListener('click', function(e){ e.stopPropagation(); stop(); goTo(current-1); start(); });
     if(nextBtn) nextBtn.addEventListener('click', function(e){ e.stopPropagation(); stop(); goTo(current+1); start(); });
     dots.forEach(function(d){ d.addEventListener('click', function(e){ e.stopPropagation(); stop(); goTo(parseInt(d.dataset.idx)); start(); }); });
@@ -1310,22 +1293,47 @@ sections.forEach(s => navIO2.observe(s));
   });
 })();
 
-/* Video Modal */
+/* ── Finance Video Modal ── */
 (function(){
   var modal = document.getElementById('videoModal');
   var video = document.getElementById('finVideo');
-  var lbl = modal.querySelector('.vm-label');
-  function openVideo(src, poster, label){ video.src=src; video.poster=poster; lbl.textContent=label; video.load(); modal.classList.add('open'); document.body.style.overflow='hidden'; }
-  function closeVideo(){ modal.classList.remove('open'); video.pause(); video.currentTime=0; document.body.style.overflow=''; }
-  var finBtn = document.getElementById('finVideoBtn');
-  finBtn.addEventListener('click', function(){ openVideo('Finance_LN.mp4','finPoster.png','Finance Dashboard Demo'); });
-  finBtn.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') openVideo('Finance_LN.mp4','finPoster.png','Finance Dashboard Demo'); });
-  var marutiBtn = document.getElementById('marutiVideoBtn');
-  marutiBtn.addEventListener('click', function(){ openVideo('Maruti_LN.mp4','marutiPoster.png','Maruti Suzuki Sales Dashboard Demo'); });
-  marutiBtn.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') openVideo('Maruti_LN.mp4','marutiPoster.png','Maruti Suzuki Sales Dashboard Demo'); });
-  document.getElementById('vmClose').addEventListener('click', closeVideo);
-  modal.addEventListener('click', function(e){ if(e.target===modal) closeVideo(); });
-  document.addEventListener('keydown', function(e){ if(modal.classList.contains('open')&&e.key==='Escape') closeVideo(); });
+  function open(){ video.load(); modal.classList.add('open'); document.body.style.overflow='hidden'; }
+  function close(){ modal.classList.remove('open'); video.pause(); video.currentTime=0; document.body.style.overflow=''; }
+  var btn = document.getElementById('finVideoBtn');
+  btn.addEventListener('click', open);
+  btn.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') open(); });
+  document.getElementById('vmClose').addEventListener('click', close);
+  modal.addEventListener('click', function(e){ if(e.target===modal) close(); });
+  document.addEventListener('keydown', function(e){ if(modal.classList.contains('open')&&e.key==='Escape') close(); });
+})();
+
+/* ── Maruti Video Modal ── */
+(function(){
+  var modal = document.getElementById('marutiVideoModal');
+  var video = document.getElementById('marutiVideo');
+  function open(){ video.load(); modal.classList.add('open'); document.body.style.overflow='hidden'; }
+  function close(){ modal.classList.remove('open'); video.pause(); video.currentTime=0; document.body.style.overflow=''; }
+  var btn = document.getElementById('marutiVideoBtn');
+  btn.addEventListener('click', open);
+  btn.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') open(); });
+  document.getElementById('marutiVmClose').addEventListener('click', close);
+  modal.addEventListener('click', function(e){ if(e.target===modal) close(); });
+  document.addEventListener('keydown', function(e){ if(modal.classList.contains('open')&&e.key==='Escape') close(); });
+})();
+
+/* ── SQL Query Analytics Video Modal (Google Drive embed) ── */
+(function(){
+  var modal = document.getElementById('sqlVideoModal');
+  var frame = document.getElementById('sqlVideoFrame');
+  var DRIVE_EMBED = 'https://drive.google.com/file/d/1AN3jOsTE9JqFFmAaptQsPf_TmdWCWFot/preview';
+  function open(){ frame.src = DRIVE_EMBED; modal.classList.add('open'); document.body.style.overflow='hidden'; }
+  function close(){ modal.classList.remove('open'); frame.src=''; document.body.style.overflow=''; }
+  var btn = document.getElementById('sqlVideoBtn');
+  btn.addEventListener('click', open);
+  btn.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') open(); });
+  document.getElementById('sqlVmClose').addEventListener('click', close);
+  modal.addEventListener('click', function(e){ if(e.target===modal) close(); });
+  document.addEventListener('keydown', function(e){ if(modal.classList.contains('open')&&e.key==='Escape') close(); });
 })();
 </script>
 </body>
