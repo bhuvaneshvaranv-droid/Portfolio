@@ -1072,30 +1072,80 @@ footer {
         </div>
       </article>
 
-      <!-- Card 4 -->
-      <article class="card reveal">
-        <div class="card-viz">
-          <div class="viz-head"><span>ETL Pipeline</span><span>Power Query</span></div>
-          <svg viewBox="0 0 300 96" aria-hidden="true">
-            <g font-family="JetBrains Mono" font-size="9" font-weight="700">
-              <rect x="10" y="36" width="58" height="24" rx="5" fill="#141b28" stroke="#fb7185" stroke-width="1.5"/>
-              <text x="39" y="51" text-anchor="middle" fill="#fb7185">EXTRACT</text>
-              <rect x="92" y="36" width="64" height="24" rx="5" fill="#141b28" stroke="#f5c842" stroke-width="1.5"/>
-              <text x="124" y="51" text-anchor="middle" fill="#f5c842">CLEAN</text>
-              <rect x="180" y="36" width="110" height="24" rx="5" fill="#141b28" stroke="#2dd4bf" stroke-width="1.5"/>
-              <text x="235" y="51" text-anchor="middle" fill="#2dd4bf">TRANSFORM ▸ LOAD</text>
-            </g>
-            <g stroke="#4a5668" stroke-width="1.5"><line x1="68" y1="48" x2="92" y2="48"/><line x1="156" y1="48" x2="180" y2="48"/></g>
-          </svg>
-        </div>
-        <div class="card-body">
-          <h3>Automated ETL &amp; Reporting</h3>
-          <p>End-to-end ETL — extraction, cleaning, transformation, and validation in Power Query and Excel — with automated data-prep and reporting workflows.</p>
-          <div class="card-out">&#9642; Streamlined reporting, less manual work</div>
-          <div class="card-tags"><span>Power Query</span><span>Excel</span><span>SQL</span><span>Validation</span></div>
-        </div>
-      </article>
+     <!-- Card 4 : SQL Query Analytics Dashboard -->
+<article class="card reveal">
+  <div class="slide-wrap" id="sqlSlideWrap" title="Click image to expand">
+    <a href="https://drive.google.com/file/d/1AN3jOsTE9JqFFmAaptQsPf_TmdWCWFot/view?usp=sharing"
+       target="_blank"
+       rel="noopener noreferrer">
+      <img class="slide active" src="sqlposter.png" alt="SQL Query Analytics Dashboard" />
+    </a>
+    <div class="slide-hint">&#128269; Click to expand</div>
+  </div>
+
+  <div class="card-video-strip"
+       onclick="window.open('https://drive.google.com/file/d/1AN3jOsTE9JqFFmAaptQsPf_TmdWCWFot/view?usp=sharing','_blank')">
+    <div class="vid-play-btn">&#9658;</div>
+    <div>
+      <div class="vid-label">Watch Dashboard Demo</div>
+      <div class="vid-sublabel">SQL Query Analytics Walkthrough</div>
     </div>
+    <div class="vid-arrow">&#8594;</div>
+  </div>
+
+  <div class="card-body">
+    <h3>SQL Query Analytics Dashboard</h3>
+
+    <p>
+      Built an end-to-end SQL performance monitoring dashboard that analyzes
+      query execution patterns, duration trends, slow-query behavior,
+      index utilization, and database performance metrics using SQL,
+      Power BI, DAX, and Power Query.
+    </p>
+
+    <div class="card-out">
+      &#9642; Monitored 3,503 SQL queries and enabled faster performance analysis
+      through interactive drill-through reporting.
+    </div>
+
+    <div class="card-tags">
+      <span>Power BI</span>
+      <span>SQL</span>
+      <span>DAX</span>
+      <span>Power Query</span>
+      <span>Database Monitoring</span>
+      <span>Performance Analytics</span>
+      <span>Query Optimization</span>
+      <span>KPI Reporting</span>
+    </div>
+
+    <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+
+      <button id="sqlOpenDashboard"
+        style="padding:8px 14px;border:none;border-radius:8px;cursor:pointer;
+        background:#a78bfa;color:#fff;font-weight:600;">
+        Dashboard
+      </button>
+
+      <a href="https://drive.google.com/file/d/1AN3jOsTE9JqFFmAaptQsPf_TmdWCWFot/view?usp=sharing"
+         target="_blank"
+         rel="noopener noreferrer"
+         style="padding:8px 14px;border-radius:8px;text-decoration:none;
+         background:#2dd4bf;color:#081018;font-weight:600;">
+         Video
+      </a>
+
+      <a href="sqlposter.png"
+         target="_blank"
+         rel="noopener noreferrer"
+         style="padding:8px 14px;border-radius:8px;text-decoration:none;
+         background:#f5c842;color:#111;font-weight:600;">
+         Poster
+      </a>
+
+    </div>
+  </div>
+</article>    </div>
   </section>
 
   <!-- ====== EXPERIENCE ====== -->
@@ -1328,5 +1378,15 @@ sections.forEach(s => navIO2.observe(s));
   document.addEventListener('keydown', function(e){ if(modal.classList.contains('open')&&e.key==='Escape') closeVideo(); });
 })();
 </script>
+   document.getElementById("sqlOpenDashboard")?.addEventListener("click", () => {
+
+  openLightbox([
+    "sqlSlide0.png",
+    "sqlSlide1.png",
+    "sqlSlide2.png",
+    "sqlSlide3.png"
+  ]);
+
+});
 </body>
 </html>
