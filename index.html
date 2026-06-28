@@ -1178,15 +1178,31 @@ footer {
 </div>
 
 <!-- ====== SQL QUERY ANALYTICS VIDEO MODAL (Google Drive) ====== -->
+<!-- ====== SQL QUERY ANALYTICS VIDEO MODAL (Google Drive) ====== -->
 <div class="video-modal" id="sqlVideoModal" role="dialog" aria-modal="true">
   <div class="video-inner">
     <button class="vm-close" id="sqlVmClose">&#10005;</button>
+
+    <!-- Poster overlay — shown before play is clicked -->
+    <div id="sqlPosterOverlay" style="position:relative;width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;cursor:pointer;box-shadow:0 30px 80px rgba(0,0,0,.9);">
+      <img src="sqlposter.png" alt="SQL Query Analytics Dashboard Poster"
+        style="width:100%;height:100%;object-fit:cover;display:block;" />
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.35);">
+        <div id="sqlPlayBtn" style="width:72px;height:72px;border-radius:50%;background:rgba(59,130,246,.9);display:flex;align-items:center;justify-content:center;box-shadow:0 0 32px rgba(59,130,246,.6);transition:transform .18s,box-shadow .18s;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:4px;"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Iframe — hidden until poster is clicked -->
     <iframe
       id="sqlVideoFrame"
       src=""
       allow="autoplay; fullscreen"
-      allowfullscreen>
+      allowfullscreen
+      style="display:none;width:100%;aspect-ratio:16/9;border:0;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.9);">
     </iframe>
+
     <div class="vm-label">SQL Query Analytics Dashboard — Full Walkthrough</div>
   </div>
 </div>
@@ -1321,19 +1337,48 @@ sections.forEach(s => navIO2.observe(s));
   document.addEventListener('keydown', function(e){ if(modal.classList.contains('open')&&e.key==='Escape') close(); });
 })();
 
-/* ── SQL Query Analytics Video Modal (Google Drive embed) ── */
+/* ── SQL Query Analytics Video Modal (Google Drive + Poster overlay) ── */
 (function(){
-  var modal = document.getElementById('sqlVideoModal');
-  var frame = document.getElementById('sqlVideoFrame');
+  var modal  = document.getElementById('sqlVideoModal');
+  var frame  = document.getElementById('sqlVideoFrame');
+  var poster = document.getElementById('sqlPosterOverlay');
+  var playBtn = document.getElementById('sqlPlayBtn');
   var DRIVE_EMBED = 'https://drive.google.com/file/d/1AN3jOsTE9JqFFmAaptQsPf_TmdWCWFot/preview';
-  function open(){ frame.src = DRIVE_EMBED; modal.classList.add('open'); document.body.style.overflow='hidden'; }
-  function close(){ modal.classList.remove('open'); frame.src=''; document.body.style.overflow=''; }
+
+  function openModal(){
+    poster.style.display = 'block';
+    frame.style.display  = 'none';
+    frame.src = '';
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    modal.classList.remove('open');
+    frame.src = '';
+    frame.style.display  = 'none';
+    poster.style.display = 'block';
+    document.body.style.overflow = '';
+  }
+  function startVideo(){
+    poster.style.display = 'none';
+    frame.style.display  = 'block';
+    frame.src = DRIVE_EMBED;
+  }
+
+  /* hover effect on play button */
+  if(playBtn){
+    playBtn.addEventListener('mouseover', function(){ this.style.transform='scale(1.1)'; this.style.boxShadow='0 0 48px rgba(59,130,246,.9)'; });
+    playBtn.addEventListener('mouseout',  function(){ this.style.transform='scale(1)';   this.style.boxShadow='0 0 32px rgba(59,130,246,.6)'; });
+  }
+
+  poster.addEventListener('click', startVideo);
+
   var btn = document.getElementById('sqlVideoBtn');
-  btn.addEventListener('click', open);
-  btn.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') open(); });
-  document.getElementById('sqlVmClose').addEventListener('click', close);
-  modal.addEventListener('click', function(e){ if(e.target===modal) close(); });
-  document.addEventListener('keydown', function(e){ if(modal.classList.contains('open')&&e.key==='Escape') close(); });
+  btn.addEventListener('click', openModal);
+  btn.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') openModal(); });
+  document.getElementById('sqlVmClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target===modal) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(modal.classList.contains('open')&&e.key==='Escape') closeModal(); });
 })();
 </script>
 </body>
