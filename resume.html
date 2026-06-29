@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Résumé — Bhuvaneshwaran V | Data Analyst & Power BI Developer</title>
+<title>Bhuvaneshwaran V — Data Analyst | Power BI Developer</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap');
 
@@ -13,7 +13,10 @@
     --navy: #1a2e4a;
     --navy-mid: #1F4E79;
     --blue: #2E75B6;
+    --blue-light: #4A90D9;
     --accent: #00B4D8;
+    --accent-2: #0077B6;
+    --gold: #E9C46A;
     --surface: #f8fafd;
     --card: #ffffff;
     --border: #dde6f0;
@@ -24,101 +27,27 @@
     --highlight-text: #0a5a8a;
     --tag-bg: #e3f0fb;
     --tag-text: #1a6aaa;
+    --print-break: avoid;
   }
 
   html { font-size: 15px; }
 
   body {
     font-family: 'Inter', sans-serif;
-    background: #0d1b2e;
+    background: #e8eef5;
     color: var(--text);
     line-height: 1.6;
     min-height: 100vh;
+    padding: 32px 16px;
   }
-
-  /* ── Top nav bar matching portfolio ── */
-  .topbar {
-    background: rgba(13,27,46,0.97);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-    padding: 0 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 56px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .topbar-logo {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .topbar-logo .bv-badge {
-    width: 32px; height: 32px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #2E75B6, #00B4D8);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: white;
-    letter-spacing: 0.5px;
-  }
-
-  .topbar-nav {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .topbar-nav a {
-    color: rgba(255,255,255,0.65);
-    text-decoration: none;
-    font-size: 0.8rem;
-    padding: 6px 12px;
-    border-radius: 6px;
-    transition: all 0.18s;
-  }
-
-  .topbar-nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
-  .topbar-nav a.active { color: #00B4D8; font-weight: 600; }
-
-  .btn-download {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 16px;
-    background: linear-gradient(135deg, #2E75B6, #00B4D8);
-    color: white;
-    border-radius: 8px;
-    font-size: 0.78rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: opacity 0.2s, transform 0.15s;
-  }
-
-  .btn-download:hover { opacity: 0.9; transform: translateY(-1px); }
-  .btn-download svg { width: 13px; height: 13px; fill: white; }
 
   /* ── Page wrapper ── */
-  .page-bg {
-    padding: 36px 20px 56px;
-  }
-
   .resume-page {
     max-width: 860px;
     margin: 0 auto;
     background: var(--card);
     border-radius: 16px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 40px rgba(26,46,74,0.13), 0 2px 8px rgba(26,46,74,0.07);
     overflow: hidden;
   }
 
@@ -178,7 +107,7 @@
   .contact-bar {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px 12px;
+    gap: 6px 14px;
     margin-top: 18px;
     position: relative;
     z-index: 1;
@@ -194,10 +123,11 @@
     border-radius: 20px;
     color: #e0f0ff;
     text-decoration: none;
-    font-size: 0.79rem;
+    font-size: 0.8rem;
     font-weight: 500;
     transition: all 0.22s ease;
     cursor: pointer;
+    backdrop-filter: blur(4px);
   }
 
   .contact-link:hover {
@@ -208,34 +138,41 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   }
 
-  .contact-link svg { width: 13px; height: 13px; flex-shrink: 0; fill: currentColor; }
+  .contact-link svg {
+    width: 14px; height: 14px;
+    flex-shrink: 0;
+    fill: currentColor;
+  }
 
   /* ── Body ── */
   .body { padding: 0 40px 36px; }
 
   /* ── Section ── */
-  .section { margin-top: 24px; }
+  .section { margin-top: 26px; }
 
   .section-header {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
 
   .section-icon {
-    width: 28px; height: 28px;
-    border-radius: 7px;
+    width: 30px; height: 30px;
+    border-radius: 8px;
     background: var(--navy-mid);
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
   }
 
-  .section-icon svg { width: 15px; height: 15px; fill: white; }
+  .section-icon svg {
+    width: 16px; height: 16px;
+    fill: white;
+  }
 
   .section-title {
     font-family: 'Poppins', sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     font-weight: 700;
     color: var(--navy-mid);
     letter-spacing: 1.5px;
@@ -252,7 +189,7 @@
   /* ── Summary ── */
   .summary-text {
     color: var(--text-mid);
-    font-size: 0.87rem;
+    font-size: 0.88rem;
     line-height: 1.75;
     text-align: justify;
   }
@@ -261,41 +198,47 @@
   .skills-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 7px;
+    gap: 8px;
   }
 
   .skill-row {
     display: flex;
     align-items: flex-start;
     gap: 8px;
-    padding: 7px 11px;
+    padding: 8px 12px;
     background: var(--surface);
-    border-radius: 7px;
+    border-radius: 8px;
     border-left: 3px solid var(--blue);
   }
 
   .skill-label {
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     font-weight: 600;
     color: var(--navy-mid);
     white-space: nowrap;
-    min-width: 72px;
+    min-width: 80px;
     padding-top: 1px;
   }
 
-  .skill-value { font-size: 0.75rem; color: var(--text-mid); line-height: 1.5; }
+  .skill-value {
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    line-height: 1.5;
+  }
 
-  /* ── Entry card ── */
+  /* ── Project / Experience card ── */
   .entry-card {
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 15px 17px;
-    margin-bottom: 11px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
     position: relative;
     transition: box-shadow 0.2s;
   }
 
-  .entry-card:hover { box-shadow: 0 4px 16px rgba(26,46,74,0.09); }
+  .entry-card:hover {
+    box-shadow: 0 4px 16px rgba(26,46,74,0.09);
+  }
 
   .entry-card::before {
     content: '';
@@ -314,11 +257,21 @@
     flex-wrap: wrap;
   }
 
-  .entry-title { font-size: 0.93rem; font-weight: 600; color: var(--navy); }
-  .entry-company { font-size: 0.83rem; color: var(--blue); font-weight: 500; margin-top: 2px; }
+  .entry-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .entry-company {
+    font-size: 0.85rem;
+    color: var(--blue);
+    font-weight: 500;
+    margin-top: 2px;
+  }
 
   .entry-period {
-    font-size: 0.73rem;
+    font-size: 0.75rem;
     color: var(--text-muted);
     background: var(--highlight-bg);
     padding: 3px 10px;
@@ -327,32 +280,42 @@
     font-weight: 500;
   }
 
-  .stack-tags { display: flex; flex-wrap: wrap; gap: 5px; margin: 7px 0 9px; }
+  .stack-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 8px 0 10px;
+  }
 
   .tag {
-    font-size: 0.68rem;
+    font-size: 0.7rem;
     font-weight: 600;
     color: var(--tag-text);
     background: var(--tag-bg);
-    padding: 2px 8px;
-    border-radius: 9px;
+    padding: 2px 9px;
+    border-radius: 10px;
+    letter-spacing: 0.2px;
   }
 
   /* ── Bullet list ── */
-  .bullet-list { list-style: none; padding: 0; margin: 0; }
+  .bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
   .bullet-list li {
     display: flex;
-    gap: 8px;
+    gap: 9px;
     align-items: flex-start;
-    font-size: 0.81rem;
+    font-size: 0.82rem;
     color: var(--text-mid);
-    line-height: 1.58;
-    padding: 2.5px 0;
+    line-height: 1.6;
+    padding: 3px 0;
   }
 
   .bullet-dot {
-    width: 5px; height: 5px;
+    width: 6px; height: 6px;
     border-radius: 50%;
     background: var(--accent);
     flex-shrink: 0;
@@ -364,93 +327,109 @@
     font-weight: 600;
     color: var(--highlight-text);
     background: var(--highlight-bg);
-    padding: 0 3px;
+    padding: 0 4px;
     border-radius: 3px;
   }
 
   /* ── Education ── */
-  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
 
   .edu-card {
-    padding: 13px 15px;
+    padding: 14px 16px;
     background: var(--surface);
-    border-radius: 9px;
+    border-radius: 10px;
     border-top: 3px solid var(--blue);
   }
 
-  .edu-degree { font-size: 0.82rem; font-weight: 600; color: var(--navy); line-height: 1.4; }
-  .edu-college { font-size: 0.74rem; color: var(--text-muted); margin-top: 4px; }
+  .edu-degree {
+    font-size: 0.83rem;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.4;
+  }
 
-  .edu-meta { display: flex; justify-content: space-between; margin-top: 7px; }
-  .edu-period { font-size: 0.72rem; color: var(--blue); font-weight: 500; }
+  .edu-college {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  .edu-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+
+  .edu-period {
+    font-size: 0.73rem;
+    color: var(--blue);
+    font-weight: 500;
+  }
 
   .edu-score {
-    font-size: 0.72rem; font-weight: 700; color: var(--navy);
-    background: #ddeeff; padding: 1px 7px; border-radius: 7px;
+    font-size: 0.73rem;
+    font-weight: 700;
+    color: var(--navy);
+    background: #ddeeff;
+    padding: 1px 8px;
+    border-radius: 8px;
   }
 
   /* ── Languages ── */
-  .lang-row { display: flex; gap: 14px; }
+  .lang-row {
+    display: flex;
+    gap: 16px;
+  }
 
   .lang-chip {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 15px;
+    padding: 8px 16px;
     background: var(--surface);
     border-radius: 8px;
     border: 1px solid var(--border);
   }
 
-  .lang-name { font-size: 0.84rem; font-weight: 600; color: var(--navy); }
-  .lang-level { font-size: 0.72rem; color: var(--text-muted); }
+  .lang-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .lang-level {
+    font-size: 0.73rem;
+    color: var(--text-muted);
+  }
 
   /* ── Print ── */
   @media print {
-    .topbar { display: none; }
-    body, .page-bg { background: white; padding: 0; }
+    body { background: white; padding: 0; }
     .resume-page { box-shadow: none; border-radius: 0; max-width: 100%; }
     .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .contact-link:hover { transform: none; }
     .entry-card { break-inside: avoid; }
+    .edu-grid { break-inside: avoid; }
   }
 
-  @media (max-width: 640px) {
-    .topbar { padding: 0 16px; }
-    .topbar-nav { display: none; }
+  @media (max-width: 620px) {
     .header { padding: 24px 20px 20px; }
-    .body { padding: 0 18px 28px; }
-    .name { font-size: 1.65rem; }
+    .body { padding: 0 20px 28px; }
+    .name { font-size: 1.7rem; }
     .skills-grid, .edu-grid { grid-template-columns: 1fr; }
-    .contact-bar { gap: 5px 7px; }
+    .contact-bar { gap: 5px 8px; }
   }
 </style>
 </head>
 <body>
 
-<!-- ════════════ TOP NAV ════════════ -->
-<nav class="topbar">
-  <a class="topbar-logo" href="https://bhuvaneshvaranv-droid.github.io/Portfolio/">
-    <div class="bv-badge">BV</div>
-    Bhuvaneshwaran V
-  </a>
-  <div class="topbar-nav">
-    <a href="https://bhuvaneshvaranv-droid.github.io/Portfolio/#about">About</a>
-    <a href="https://bhuvaneshvaranv-droid.github.io/Portfolio/#projects">Dashboards</a>
-    <a href="https://bhuvaneshvaranv-droid.github.io/Portfolio/#experience">Experience</a>
-    <a href="resume.html" class="active">Résumé</a>
-    <a href="https://bhuvaneshvaranv-droid.github.io/Portfolio/#contact">Contact</a>
-  </div>
-  <a class="btn-download" href="Bhuvaneshwaran_Resume.pdf" download>
-    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-    Download PDF
-  </a>
-</nav>
-
-<!-- ════════════ RESUME PAGE ════════════ -->
-<div class="page-bg">
 <div class="resume-page">
 
-  <!-- HEADER -->
+  <!-- ════════════ HEADER ════════════ -->
   <div class="header">
     <div class="name">Bhuvaneshwaran V</div>
     <div class="title-badge">
@@ -458,23 +437,28 @@
       <span class="title-sep">|</span>
       <span>Power BI Developer</span>
     </div>
+
     <div class="contact-bar">
       <a class="contact-link" href="tel:+918056601119">
         <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02z"/></svg>
         +91-8056601119
       </a>
+
       <a class="contact-link" href="mailto:bhuvaneshvaranv@gmail.com">
         <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         bhuvaneshvaranv@gmail.com
       </a>
+
       <a class="contact-link" href="https://www.linkedin.com/in/bhuvaneshwaran-v" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zm-11 6H6v10h2V9zm-1-3a1 1 0 110 2 1 1 0 010-2zm9 3h-2v1.5c0-1 1-1.5 2-1.5v-1c-1.5 0-3 .8-3 3V19h2v-5.5c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5V19h2v-6c0-2.2-1.8-4-4-4z"/></svg>
         LinkedIn
       </a>
+
       <a class="contact-link" href="https://bhuvaneshvaranv-droid.github.io/Portfolio/" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
         Portfolio / GitHub
       </a>
+
       <span class="contact-link" style="cursor:default;">
         <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
         Chennai, Tamil Nadu
@@ -482,13 +466,15 @@
     </div>
   </div>
 
-  <!-- BODY -->
+  <!-- ════════════ BODY ════════════ -->
   <div class="body">
 
-    <!-- Summary -->
+    <!-- Professional Summary -->
     <div class="section">
       <div class="section-header">
-        <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 3a3 3 0 110 6 3 3 0 010-6zm0 14.2a7.2 7.2 0 01-6-3.22c.03-1.99 4-3.08 6-3.08s5.97 1.09 6 3.08a7.2 7.2 0 01-6 3.22z"/></svg></div>
+        <div class="section-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 3a3 3 0 110 6 3 3 0 010-6zm0 14.2a7.2 7.2 0 01-6-3.22c.03-1.99 4-3.08 6-3.08s5.97 1.09 6 3.08a7.2 7.2 0 01-6 3.22z"/></svg>
+        </div>
         <span class="section-title">Professional Summary</span>
         <div class="section-line"></div>
       </div>
@@ -497,10 +483,12 @@
       </p>
     </div>
 
-    <!-- Skills -->
+    <!-- Technical Skills -->
     <div class="section">
       <div class="section-header">
-        <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg></div>
+        <div class="section-icon">
+          <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+        </div>
         <span class="section-title">Technical Skills</span>
         <div class="section-line"></div>
       </div>
@@ -535,17 +523,20 @@
     <!-- Projects -->
     <div class="section">
       <div class="section-header">
-        <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg></div>
+        <div class="section-icon">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+        </div>
         <span class="section-title">Projects</span>
         <div class="section-line"></div>
       </div>
+
       <div class="entry-card">
         <div class="entry-top">
           <div>
             <div class="entry-title">Maruti Suzuki Automotive Sales Dashboard</div>
             <div class="entry-company">Portfolio Project — Power BI</div>
           </div>
-          <span class="entry-period">2024 – 2026</span>
+          <span class="entry-period">2026</span>
         </div>
         <div class="stack-tags">
           <span class="tag">Power BI Desktop</span>
@@ -560,32 +551,38 @@
           <li><span class="bullet-dot"></span><span>Built a <span class="hl">star schema data model</span> with Sales and Customer fact tables connected to <span class="hl">6 dimension tables</span>, optimizing query performance and report accuracy.</span></li>
           <li><span class="bullet-dot"></span><span>Engineered <span class="hl">40+ DAX measures</span> including YOY, MOM (DATESBETWEEN + EDATE for slicer compatibility), MTD, YTD, Prior Year comparisons, and a dynamic Last Refresh indicator.</span></li>
           <li><span class="bullet-dot"></span><span>Designed <span class="hl">HTML Content KPI cards</span> in a horizontal 6-card executive overview layout with gradient styling using the Bird Finsight purple palette.</span></li>
-          <li><span class="bullet-dot"></span><span>Implemented multi-page navigation for seamless flow across Overview, Model Analysis, Regional Performance, and Customer Insights pages.</span></li>
-          <li><span class="bullet-dot"></span><span>Created a <span class="hl">bookmark-based show/hide slicer panel</span> using bookmarks and selection pane for a clean full-screen dashboard with dynamic filter reset.</span></li>
-          <li><span class="bullet-dot"></span><span>Applied drill-through navigation, custom tooltip pages, a clickable car model gallery, and a custom JSON theme for consistent dark-mode branding.</span></li>
+          <li><span class="bullet-dot"></span><span>Implemented multi-page navigation buttons for seamless flow across Overview, Model Analysis, Regional Performance, and Customer Insights pages.</span></li>
+          <li><span class="bullet-dot"></span><span>Created a <span class="hl">bookmark-based show/hide slicer panel</span> using bookmarks and selection pane for a clean full-screen dashboard experience with dynamic filter reset.</span></li>
+          <li><span class="bullet-dot"></span><span>Applied drill-through navigation, custom tooltip pages, a clickable car model gallery, and a custom JSON theme for consistent dark-mode branding across all report pages.</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- Internship -->
+    <!-- Internship Experience -->
     <div class="section">
       <div class="section-header">
-        <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.34C18 2.54 15.96.5 13.32.5c-1.4 0-2.72.61-3.62 1.64L8 4 6.3 2.14C5.4 1.11 4.08.5 2.68.5.04.5-2 2.54-2 5.16c0 .46.11.9.18 1.34H-2c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h22c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7.32-4c1.34 0 2.32.98 2.32 2.16 0 .73-.37 1.41-.89 1.84H9.9C9.37 5.57 9 4.89 9 4.16 9 2.98 9.98 2 11.32 2H12.68zm-10 0C4.02 2 5 2.98 5 4.16c0 .73-.37 1.41-.89 1.84H2.89C2.37 5.57 2 4.89 2 4.16 2 2.98 2.98 2 4.34 2H3.68zM20 19H2v-2h18v2zm0-5H2v-6h6.17L6 10.21 7.41 11.5 10 8.68l2.59 2.82L14 10.21 11.83 8H18v6z"/></svg></div>
+        <div class="section-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.34C18 2.54 15.96.5 13.32.5c-1.4 0-2.72.61-3.62 1.64L8 4 6.3 2.14C5.4 1.11 4.08.5 2.68.5.04.5-2 2.54-2 5.16c0 .46.11.9.18 1.34H-2c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h22c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7.32-4c1.34 0 2.32.98 2.32 2.16 0 .73-.37 1.41-.89 1.84H9.9C9.37 5.57 9 4.89 9 4.16 9 2.98 9.98 2 11.32 2H12.68zm-10 0C4.02 2 5 2.98 5 4.16c0 .73-.37 1.41-.89 1.84H2.89C2.37 5.57 2 4.89 2 4.16 2 2.98 2.98 2 4.34 2H3.68zM20 19H2v-2h18v2zm0-5H2v-6h6.17L6 10.21 7.41 11.5 10 8.68l2.59 2.82L14 10.21 11.83 8H18v6z"/></svg>
+        </div>
         <span class="section-title">Internship Experience</span>
         <div class="section-line"></div>
       </div>
+
       <div class="entry-card">
         <div class="entry-top">
           <div>
             <div class="entry-title">Data Analytics Intern</div>
             <div class="entry-company">ACSASS Company, Chennai</div>
           </div>
-          <span class="entry-period">2023</span>
+          <span class="entry-period">2026</span>
         </div>
         <div class="stack-tags">
-          <span class="tag">Power BI</span><span class="tag">DAX</span>
-          <span class="tag">Power Query</span><span class="tag">SQL</span>
-          <span class="tag">Excel</span><span class="tag">Star Schema</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">DAX</span>
+          <span class="tag">Power Query</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Excel</span>
+          <span class="tag">Star Schema</span>
         </div>
         <ul class="bullet-list">
           <li><span class="bullet-dot"></span><span>Built <span class="hl">interactive Power BI dashboards</span> featuring slicers, drill-downs, and KPI indicators to monitor key business metrics for stakeholders.</span></li>
@@ -594,7 +591,7 @@
           <li><span class="bullet-dot"></span><span>Performed end-to-end <span class="hl">ETL pipelines</span> — data extraction, cleaning, transformation, and validation — using Power Query and Excel.</span></li>
           <li><span class="bullet-dot"></span><span>Wrote <span class="hl">optimized SQL queries</span> including joins, subqueries, and aggregations to extract and analyze large datasets from relational databases.</span></li>
           <li><span class="bullet-dot"></span><span><span class="hl">Automated data preparation</span> and reporting workflows, significantly reducing manual effort and improving operational efficiency.</span></li>
-          <li><span class="bullet-dot"></span><span>Applied <span class="hl">data visualization best practices</span> to deliver clear, stakeholder-ready reports translating raw data into actionable business insights.</span></li>
+          <li><span class="bullet-dot"></span><span>Applied <span class="hl">data visualization best practices</span> to deliver clear, stakeholder-ready analytical reports translating raw data into actionable business insights.</span></li>
         </ul>
       </div>
     </div>
@@ -602,13 +599,15 @@
     <!-- Education -->
     <div class="section">
       <div class="section-header">
-        <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18V15c0 1.66 3.13 3 7 3s7-1.34 7-3v-3.82L23 9 12 3zm6 10c0 .56-2.53 1.5-6 1.5S6 13.56 6 13v-2.27l6 3.27 6-3.27V13zm-6-.5L4.5 9 12 5 19.5 9 12 12.5z"/></svg></div>
+        <div class="section-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18V15c0 1.66 3.13 3 7 3s7-1.34 7-3v-3.82L23 9 12 3zm6 10c0 .56-2.53 1.5-6 1.5S6 13.56 6 13v-2.27l6 3.27 6-3.27V13zm-6-.5L4.5 9 12 5 19.5 9 12 12.5z"/></svg>
+        </div>
         <span class="section-title">Education</span>
         <div class="section-line"></div>
       </div>
       <div class="edu-grid">
         <div class="edu-card">
-          <div class="edu-degree">Master of Business Administration<br><span style="color:var(--blue);font-size:0.76rem;">HR &amp; Finance</span></div>
+          <div class="edu-degree">Master of Business Administration<br><span style="color:var(--blue);font-size:0.78rem;">HR &amp; Finance</span></div>
           <div class="edu-college">Kongu Arts and Science College, Erode</div>
           <div class="edu-meta">
             <span class="edu-period">2021 – 2023</span>
@@ -616,7 +615,7 @@
           </div>
         </div>
         <div class="edu-card">
-          <div class="edu-degree">Bachelor of Science<br><span style="color:var(--blue);font-size:0.76rem;">Mathematics</span></div>
+          <div class="edu-degree">Bachelor of Science<br><span style="color:var(--blue);font-size:0.78rem;">Mathematics</span></div>
           <div class="edu-college">Bishop Heber College, Trichy</div>
           <div class="edu-meta">
             <span class="edu-period">2019 – 2021</span>
@@ -626,32 +625,8 @@
       </div>
     </div>
 
-    <!-- Languages -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg></div>
-        <span class="section-title">Languages</span>
-        <div class="section-line"></div>
-      </div>
-      <div class="lang-row">
-        <div class="lang-chip">
-          <div>
-            <div class="lang-name">English</div>
-            <div class="lang-level">Professional Proficiency</div>
-          </div>
-        </div>
-        <div class="lang-chip">
-          <div>
-            <div class="lang-name">Tamil</div>
-            <div class="lang-level">Native</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-</div>
+  </div><!-- /body -->
+</div><!-- /resume-page -->
 
 </body>
 </html>
